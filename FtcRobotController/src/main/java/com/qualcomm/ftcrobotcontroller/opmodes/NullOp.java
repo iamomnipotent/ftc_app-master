@@ -52,6 +52,7 @@ public class NullOp extends OpMode {
     TouchSensor e_switch;
 
     public Boolean isViolated;
+    public Boolean dpadDown;
 
     public float leftMotorPower;
     public float rightMotorPower;
@@ -74,10 +75,14 @@ public class NullOp extends OpMode {
         leftMotorPower = gamepad1.left_stick_y;
         rightMotorPower = gamepad1.right_stick_y;
 
+        dpadDown = gamepad1.dpad_down;
+
+        /*
         lf_motor = hardwareMap.dcMotor.get("leftfront");
         rf_motor = hardwareMap.dcMotor.get("rightfront");
         lr_motor = hardwareMap.dcMotor.get("leftrear");
         rr_motor = hardwareMap.dcMotor.get("rightrear");
+        */
     }
 
     /*
@@ -88,10 +93,12 @@ public class NullOp extends OpMode {
     public void loop() {
         isViolated = e_switch.isPressed();
 
+        /*
         lf_motor.setPower(leftMotorPower);
         lr_motor.setPower(leftMotorPower);
         rf_motor.setPower(rightMotorPower);
         rr_motor.setPower(rightMotorPower);
+        */
 
         /*
         if(gamepad1.a) {
@@ -105,6 +112,7 @@ public class NullOp extends OpMode {
         telemetry.addData("1 Start", "NullOp started at " + startDate);
         telemetry.addData("2 Status", "running for " + runtime.toString());
         telemetry.addData("Is the switch pressed?", isViolated);
+        telemetry.addData("Is dpad down pressed?", dpadDown);
 
     }
 }
