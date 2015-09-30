@@ -32,8 +32,6 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.TouchSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import java.text.SimpleDateFormat;
@@ -46,73 +44,31 @@ import java.util.Date;
  */
 public class NullOp extends OpMode {
 
-    private String startDate;
-    private ElapsedTime runtime = new ElapsedTime();
+  private String startDate;
+  private ElapsedTime runtime = new ElapsedTime();
 
-    TouchSensor e_switch;
+  @Override
+  public void init() {
+  }
 
-    public Boolean isViolated;
-    public Boolean dpadDown;
-
-    public float leftMotorPower;
-    public float rightMotorPower;
-
-    public DcMotor lf_motor;    // left front
-    public DcMotor rf_motor;    // right front
-    public DcMotor lr_motor;    // left rear
-    public DcMotor rr_motor;    // right rear
-
-    /*
+  /*
      * Code to run when the op mode is first enabled goes here
      * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
      */
-    @Override
-    public void init() {
-        startDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date());
-        runtime.reset();
-        e_switch = hardwareMap.touchSensor.get("switch");
+  @Override
+  public void init_loop() {
+    startDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date());
+    runtime.reset();
+    telemetry.addData("Null Op Init Loop", runtime.toString());
+  }
 
-        leftMotorPower = gamepad1.left_stick_y;
-        rightMotorPower = gamepad1.right_stick_y;
-
-        dpadDown = gamepad1.dpad_down;
-
-        /*
-        lf_motor = hardwareMap.dcMotor.get("leftfront");
-        rf_motor = hardwareMap.dcMotor.get("rightfront");
-        lr_motor = hardwareMap.dcMotor.get("leftrear");
-        rr_motor = hardwareMap.dcMotor.get("rightrear");
-        */
-    }
-
-    /*
-     * This method will be called repeatedly in a loop
-     * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#loop()
-     */
-    @Override
-    public void loop() {
-        isViolated = e_switch.isPressed();
-
-        /*
-        lf_motor.setPower(leftMotorPower);
-        lr_motor.setPower(leftMotorPower);
-        rf_motor.setPower(rightMotorPower);
-        rr_motor.setPower(rightMotorPower);
-        */
-
-        /*
-        if(gamepad1.a) {
-            isDPadDown = true;
-        }
-        else {
-            isDPadDown = false;
-        }
-        */
-
-        telemetry.addData("1 Start", "NullOp started at " + startDate);
-        telemetry.addData("2 Status", "running for " + runtime.toString());
-        telemetry.addData("Is the switch pressed?", isViolated);
-        telemetry.addData("Is dpad down pressed?", dpadDown);
-
-    }
+  /*
+   * This method will be called repeatedly in a loop
+   * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#loop()
+   */
+  @Override
+  public void loop() {
+    telemetry.addData("1 Start", "NullOp started at " + startDate);
+    telemetry.addData("2 Status", "running for " + runtime.toString());
+  }
 }
