@@ -72,9 +72,6 @@ public class kevinsop extends OpMode {
         runtime.reset();
         e_switch = hardwareMap.touchSensor.get("switch");
 
-        leftMotorPower = gamepad1.left_stick_y;
-        rightMotorPower = gamepad1.right_stick_y;
-
         /*
         lf_motor = hardwareMap.dcMotor.get("leftfront");
         rf_motor = hardwareMap.dcMotor.get("rightfront");
@@ -92,6 +89,9 @@ public class kevinsop extends OpMode {
         isViolated = e_switch.isPressed();
         dpadDown = gamepad1.dpad_down;
 
+        leftMotorPower = gamepad1.left_stick_y;
+        rightMotorPower = gamepad1.right_stick_y;
+
         /*
         lf_motor.setPower(leftMotorPower);
         lr_motor.setPower(leftMotorPower);
@@ -108,8 +108,8 @@ public class kevinsop extends OpMode {
         }
         */
 
-        telemetry.addData("1 Start", "NullOp started at " + startDate);
-        telemetry.addData("2 Status", "running for " + runtime.toString());
+        // telemetry.addData("1 Start", "NullOp started at " + startDate);
+        // telemetry.addData("2 Status", "running for " + runtime.toString());
         telemetry.addData("Is the switch pressed?", isViolated);
         telemetry.addData("Is dpad down pressed?", dpadDown);
 
