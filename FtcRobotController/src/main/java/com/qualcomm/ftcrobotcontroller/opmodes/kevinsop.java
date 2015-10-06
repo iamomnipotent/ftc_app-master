@@ -33,8 +33,11 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.ServoController;
 import com.qualcomm.robotcore.hardware.TouchSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.robotcore.util.Range;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -49,10 +52,11 @@ public class kevinsop extends OpMode {
     private String startDate;
     private ElapsedTime runtime = new ElapsedTime();
 
-    TouchSensor e_switch;
+    // TouchSensor e_switch;
 
     public Boolean isViolated;
     public Boolean dpadDown;
+    public Boolean dpadUp;
 
     public float leftMotorPower;
     public float rightMotorPower;
@@ -62,6 +66,15 @@ public class kevinsop extends OpMode {
     public DcMotor lr_motor;    // left rear
     public DcMotor rr_motor;    // right rear
 
+    public ServoController e_servocontroller;
+    public Servo e_servo;
+
+    public double e_servo_delta = 0.1;
+    public double e_servo_pos = 0.1;
+
+    final static double MAX_ESERVO_POS = 0.95;
+    final static double MIN_ESERVO_POS = 0.05;
+
     /*
      * Code to run when the op mode is first enabled goes here
      * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
@@ -70,7 +83,10 @@ public class kevinsop extends OpMode {
     public void init() {
         startDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date());
         runtime.reset();
-        e_switch = hardwareMap.touchSensor.get("switch");
+        // e_switch = hardwareMap.touchSensor.get("switch");
+        e_servo = hardwareMap.servo.get("e_servo");
+        e_servocontroller = hardwareMap.servoController.get("servoctrl");
+        e_servocontroller.pwmEnable();
 
         /*
         lf_motor = hardwareMap.dcMotor.get("leftfront");
@@ -86,11 +102,31 @@ public class kevinsop extends OpMode {
      */
     @Override
     public void loop() {
-        isViolated = e_switch.isPressed();
+        // e_servo.setPosition(e_servo_pos);
+        if(e_servocontroller.getPwmStatus() == ServoController.PwmStatus.DISABLED) {
+            e_servocontroller.pwmEnable();
+        }
+
+        // isViolated = e_switch.isPressed();
         dpadDown = gamepad1.dpad_down;
+        dpadUp = gamepad1.dpad_up;
 
         leftMotorPower = gamepad1.left_stick_y;
         rightMotorPower = gamepad1.right_stick_y;
+
+        /*
+        if(dpadDown) {
+            e_servo_pos = e_servo_pos - e_servo_delta;
+        }
+        if(dpadUp) {
+            e_servo_pos = e_servo_pos + e_servo_delta;
+        }
+        */
+
+        // e_servo_pos = Range.clip(e_servo_pos, MAX_ESERVO_POS, MIN_ESERVO_POS);
+
+        // e_servo.setPosition(e_servo_pos);
+        e_servo.setPosition(0.83);
 
         /*
         lf_motor.setPower(leftMotorPower);
@@ -110,8 +146,12 @@ public class kevinsop extends OpMode {
 
         // telemetry.addData("1 Start", "NullOp started at " + startDate);
         // telemetry.addData("2 Status", "running for " + runtime.toString());
-        telemetry.addData("Is the switch pressed?", isViolated);
-        telemetry.addData("Is dpad down pressed?", dpadDown);
+        // telemetry.addData("Is the switch pressed?", isViolated);
+        // telemetry.addData("Is dpad up pressed?", dpadUp);
+        // telemetry.addData("Is dpad down pressed?", dpadDown);
+        telemetry.addData("Servo position", e_servo.getPosition());
+        telemetry.addData("PWM status", e_servocontroller.getPwmStatus());
+        telemetry.addData("servo pos from servoctrl function", e_servocontroller.getServoPosition(1));
 
     }
 }
