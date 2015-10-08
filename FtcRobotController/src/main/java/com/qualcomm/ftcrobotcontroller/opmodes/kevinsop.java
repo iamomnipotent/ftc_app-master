@@ -32,6 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.ServoController;
@@ -54,9 +55,12 @@ public class kevinsop extends OpMode {
 
     // TouchSensor e_switch;
 
-    public Boolean isViolated;
+    public Boolean isPressed;
     public Boolean dpadDown;
     public Boolean dpadUp;
+    public Boolean abutton;
+    public Boolean bbutton;
+    public Boolean xbutton;
 
     public float leftMotorPower;
     public float rightMotorPower;
@@ -66,14 +70,16 @@ public class kevinsop extends OpMode {
     public DcMotor lr_motor;    // left rear
     public DcMotor rr_motor;    // right rear
 
-    public ServoController e_servocontroller;
-    public Servo e_servo;
+    // public ServoController e_servocontroller;
+    Servo e_servo;
 
-    public double e_servo_delta = 0.1;
-    public double e_servo_pos = 0.1;
+    public double e_servo_delta = 0.01;
+    public double e_servo_pos = 0.0;
 
     final static double MAX_ESERVO_POS = 0.95;
     final static double MIN_ESERVO_POS = 0.05;
+
+    ColorSensor e_colorsensor;
 
     /*
      * Code to run when the op mode is first enabled goes here
@@ -85,9 +91,11 @@ public class kevinsop extends OpMode {
         runtime.reset();
         // e_switch = hardwareMap.touchSensor.get("switch");
         e_servo = hardwareMap.servo.get("e_servo");
-        e_servocontroller = hardwareMap.servoController.get("servoctrl");
-        e_servocontroller.pwmEnable();
+        e_colorsensor = hardwareMap.colorSensor.get("e_colorsensor");
+        // e_servocontroller = hardwareMap.servoController.get("servoctrl");
+        // e_servocontroller.pwmEnable();
 
+        // e_colorsensor.enableLed(false);
         /*
         lf_motor = hardwareMap.dcMotor.get("leftfront");
         rf_motor = hardwareMap.dcMotor.get("rightfront");
@@ -103,30 +111,44 @@ public class kevinsop extends OpMode {
     @Override
     public void loop() {
         // e_servo.setPosition(e_servo_pos);
-        if(e_servocontroller.getPwmStatus() == ServoController.PwmStatus.DISABLED) {
-            e_servocontroller.pwmEnable();
-        }
+        // if(e_servocontroller.getPwmStatus() == ServoController.PwmStatus.DISABLED) {
+        //     e_servocontroller.pwmEnable();
+        // }
 
-        // isViolated = e_switch.isPressed();
+        // isPressed = e_switch.isPressed();
         dpadDown = gamepad1.dpad_down;
         dpadUp = gamepad1.dpad_up;
+        abutton = gamepad1.a;
+        bbutton = gamepad1.b;
+        xbutton = gamepad1.x;
 
-        leftMotorPower = gamepad1.left_stick_y;
-        rightMotorPower = gamepad1.right_stick_y;
+        // leftMotorPower = gamepad1.left_stick_y;
+        // rightMotorPower = gamepad1.right_stick_y;
 
-        /*
         if(dpadDown) {
             e_servo_pos = e_servo_pos - e_servo_delta;
         }
         if(dpadUp) {
             e_servo_pos = e_servo_pos + e_servo_delta;
         }
-        */
+        else {
+            e_servo_pos = e_servo_pos;
+        }
 
-        // e_servo_pos = Range.clip(e_servo_pos, MAX_ESERVO_POS, MIN_ESERVO_POS);
+        if(abutton) {
+            e_servo_pos = 0.25;
+        }
+        if(bbutton) {
+            e_servo_pos = 0.75;
+        }
+        if(xbutton) {
+            e_servo_pos = 0.05;
+        }
 
-        // e_servo.setPosition(e_servo_pos);
-        e_servo.setPosition(0.83);
+        e_servo_pos = Range.clip(e_servo_pos, MIN_ESERVO_POS, MAX_ESERVO_POS);
+
+        e_servo.setPosition(e_servo_pos);
+        // e_servo.setPosition(0.9);
 
         /*
         lf_motor.setPower(leftMotorPower);
@@ -146,12 +168,19 @@ public class kevinsop extends OpMode {
 
         // telemetry.addData("1 Start", "NullOp started at " + startDate);
         // telemetry.addData("2 Status", "running for " + runtime.toString());
-        // telemetry.addData("Is the switch pressed?", isViolated);
+        // telemetry.addData("Is the switch pressed?", isPressed);
         // telemetry.addData("Is dpad up pressed?", dpadUp);
         // telemetry.addData("Is dpad down pressed?", dpadDown);
-        telemetry.addData("Servo position", e_servo.getPosition());
-        telemetry.addData("PWM status", e_servocontroller.getPwmStatus());
-        telemetry.addData("servo pos from servoctrl function", e_servocontroller.getServoPosition(1));
+        // telemetry.addData("Servo position", e_servo.getPosition());
+        // telemetry.addData("PWM status", e_servocontroller.getPwmStatus());
+        // telemetry.addData("servo pos from servoctrl function", e_servocontroller.getServoPosition(1));
+        telemetry.addData("current servo position", e_servo_pos);
+        telemetry.addData("current acceleration", e_servo_delta);
+        telemetry.addData("hue", e_colorsensor.argb());
+        telemetry.addData("alpha", e_colorsensor.alpha());
+        telemetry.addData("blue", e_colorsensor.blue());
+        telemetry.addData("green", e_colorsensor.green());
+        telemetry.addData("red", e_colorsensor.red());
 
     }
 }
