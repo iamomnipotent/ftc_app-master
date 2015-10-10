@@ -77,6 +77,8 @@ public class kevinsop extends OpMode {
     public int[] green = new int[4];
     public int[] blue = new int[4];
 
+    public boolean discard;
+
     public DcMotor lf_motor;    // left front
     public DcMotor rf_motor;    // right front
     public DcMotor lr_motor;    // left rear
@@ -197,20 +199,26 @@ public class kevinsop extends OpMode {
      */
     @Override
     public void loop() {
-        red[0] = e_colorsensor.red();
-        red[1] = red[0];
-        red[2] = red[1];
-        red[3] = (red[0]+red[1]+red[2])/3;
+        if(e_colorsensor.red() < 240) {
+            red[0] = e_colorsensor.red();
+            red[1] = red[0];
+            red[2] = red[1];
+            red[3] = (red[0] + red[1] + red[2]) / 3;
+        }
 
-        green[0] = e_colorsensor.green();
-        green[1] = green[0];
-        green[2] = green[1];
-        green[3] = (green[0]+green[1]+green[2])/3;
+        if(e_colorsensor.green() < 240) {
+            green[0] = e_colorsensor.green();
+            green[1] = green[0];
+            green[2] = green[1];
+            green[3] = (green[0] + green[1] + green[2]) / 3;
+        }
 
-        blue[0] = e_colorsensor.blue();
-        blue[1] = blue[0];
-        blue[2] = blue[1];
-        blue[3] = (blue[0]+blue[1]+blue[2])/3;
+        if(e_colorsensor.blue() < 240) {
+            blue[0] = e_colorsensor.blue();
+            blue[1] = blue[0];
+            blue[2] = blue[1];
+            blue[3] = (blue[0] + blue[1] + blue[2]) / 3;
+        }
 
         Color.RGBToHSV(red[3], green[3], blue[3], hsvValues);
 
