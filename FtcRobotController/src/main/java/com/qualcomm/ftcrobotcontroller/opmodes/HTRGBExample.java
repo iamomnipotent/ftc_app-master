@@ -139,6 +139,13 @@ public class HTRGBExample extends LinearOpMode {
       telemetry.addData("Blue ", sensorRGB.blue());
       telemetry.addData("Hue", hsvValues[0]);
 
+      if (sensorRGB.red() > sensorRGB.blue()) {
+        telemetry.addData("color", "red");
+      }
+      if (sensorRGB.blue() > sensorRGB.red()) {
+        telemetry.addData("color", "blue");
+      }
+
       // change the background color to match the color detected by the RGB sensor.
       // pass a reference to the hue, saturation, and value array as an argument
       // to the HSVToColor method.

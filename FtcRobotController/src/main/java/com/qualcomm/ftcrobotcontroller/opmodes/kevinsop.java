@@ -31,14 +31,22 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import android.app.Activity;
+import android.graphics.Color;
+import android.view.View;
+
+import com.qualcomm.ftcrobotcontroller.R;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
+import com.qualcomm.robotcore.hardware.LED;
 import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.hardware.ServoController;
 import com.qualcomm.robotcore.hardware.TouchSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -65,6 +73,10 @@ public class kevinsop extends OpMode {
     public float leftMotorPower;
     public float rightMotorPower;
 
+    public int[] red = new int[4];
+    public int[] green = new int[4];
+    public int[] blue = new int[4];
+
     public DcMotor lf_motor;    // left front
     public DcMotor rf_motor;    // right front
     public DcMotor lr_motor;    // left rear
@@ -79,7 +91,54 @@ public class kevinsop extends OpMode {
     final static double MAX_ESERVO_POS = 0.95;
     final static double MIN_ESERVO_POS = 0.05;
 
+    // public enum e_colorsensorDevice {ADAFRUIT, HITECHNIC_NXT, MODERN_ROBOTICS_I2C};
+    // public e_colorsensorDevice device = e_colorsensorDevice.MODERN_ROBOTICS_I2C;
+
     ColorSensor e_colorsensor;
+    // DeviceInterfaceModule cdim;
+    TouchSensor e_touch;
+    LED led;
+
+    float hsvValues[] = {0F,0F,0F};
+    final float values[] = hsvValues;
+
+    // final View relativeLayout = ((Activity) hardwareMap.appContext).findViewById(R.id.RelativeLayout);
+
+    /*
+    public void runOpMode() throws InterruptedException {
+        hardwareMap.logDevices();
+
+        cdim = hardwareMap.deviceInterfaceModule.get("dim");
+        switch (device) {
+            case HITECHNIC_NXT:
+                e_colorsensor = hardwareMap.colorSensor.get("nxt");
+                break;
+            case ADAFRUIT:
+                e_colorsensor = hardwareMap.colorSensor.get("lady");
+                break;
+            case MODERN_ROBOTICS_I2C:
+                e_colorsensor = hardwareMap.colorSensor.get("mr");
+                break;
+        }
+        led = hardwareMap.led.get("led");
+        e_touch = hardwareMap.touchSensor.get("e_touch");
+
+    }
+
+    public void enableLed(boolean value) {
+        switch (device) {
+            case HITECHNIC_NXT:
+                e_colorsensor.enableLed(value);
+                break;
+            case ADAFRUIT:
+                led.enable(value);
+                break;
+            case MODERN_ROBOTICS_I2C:
+                e_colorsensor.enableLed(value);
+                break;
+        }
+    }
+    */
 
     /*
      * Code to run when the op mode is first enabled goes here
@@ -87,11 +146,39 @@ public class kevinsop extends OpMode {
      */
     @Override
     public void init() {
-        startDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date());
-        runtime.reset();
-        // e_switch = hardwareMap.touchSensor.get("switch");
+        e_touch = hardwareMap.touchSensor.get("e_touch");
         e_servo = hardwareMap.servo.get("e_servo");
         e_colorsensor = hardwareMap.colorSensor.get("e_colorsensor");
+
+        /*
+        enableLed(e_touch.isPressed());
+
+        switch (device) {
+            case HITECHNIC_NXT:
+                Color.RGBToHSV(e_colorsensor.red(), e_colorsensor.green(), e_colorsensor.blue(), hsvValues);
+                break;
+            case ADAFRUIT:
+                Color.RGBToHSV((e_colorsensor.red() * 255) / 800, (e_colorsensor.green() * 255) / 800, (e_colorsensor.blue() * 255) / 800, hsvValues);
+                break;
+            case MODERN_ROBOTICS_I2C:
+                Color.RGBToHSV(e_colorsensor.red()*8, e_colorsensor.green()*8, e_colorsensor.blue()*8, hsvValues);
+                break;
+        }
+        telemetry.addData("Clear", e_colorsensor.alpha());
+        telemetry.addData("Red  ", e_colorsensor.red());
+        telemetry.addData("Green", e_colorsensor.green());
+        telemetry.addData("Blue ", e_colorsensor.blue());
+        telemetry.addData("Hue", hsvValues[0]);
+
+        relativeLayout.post(new Runnable() {
+            public void run() {
+                relativeLayout.setBackgroundColor(Color.HSVToColor(0xff, values));
+            }
+        });
+        */
+
+        // startDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date());
+        // runtime.reset();
         // e_servocontroller = hardwareMap.servoController.get("servoctrl");
         // e_servocontroller.pwmEnable();
 
@@ -110,6 +197,30 @@ public class kevinsop extends OpMode {
      */
     @Override
     public void loop() {
+        red[0] = e_colorsensor.red();
+        red[1] = red[0];
+        red[2] = red[1];
+        red[3] = (red[0]+red[1]+red[2])/3;
+
+        green[0] = e_colorsensor.green();
+        green[1] = green[0];
+        green[2] = green[1];
+        green[3] = (green[0]+green[1]+green[2])/3;
+
+        blue[0] = e_colorsensor.blue();
+        blue[1] = blue[0];
+        blue[2] = blue[1];
+        blue[3] = (blue[0]+blue[1]+blue[2])/3;
+
+        Color.RGBToHSV(red[3], green[3], blue[3], hsvValues);
+
+        if(e_touch.isPressed()) {
+            e_colorsensor.enableLed(false);
+        }
+        else {
+            e_colorsensor.enableLed(true);
+        }
+
         // e_servo.setPosition(e_servo_pos);
         // if(e_servocontroller.getPwmStatus() == ServoController.PwmStatus.DISABLED) {
         //     e_servocontroller.pwmEnable();
@@ -176,11 +287,25 @@ public class kevinsop extends OpMode {
         // telemetry.addData("servo pos from servoctrl function", e_servocontroller.getServoPosition(1));
         telemetry.addData("current servo position", e_servo_pos);
         telemetry.addData("current acceleration", e_servo_delta);
-        telemetry.addData("hue", e_colorsensor.argb());
+        telemetry.addData("hue", hsvValues[0]);
         telemetry.addData("alpha", e_colorsensor.alpha());
-        telemetry.addData("blue", e_colorsensor.blue());
-        telemetry.addData("green", e_colorsensor.green());
-        telemetry.addData("red", e_colorsensor.red());
+        telemetry.addData("blue", blue[3]);
+        telemetry.addData("green", green[3]);
+        telemetry.addData("red", red[3]);
 
+        if (red[3] > blue[3]) {
+            telemetry.addData("color", "red");
+        }
+        if (blue[3] > red[3]) {
+            telemetry.addData("color", "blue");
+        }
+
+        /*
+        relativeLayout.post(new Runnable() {
+            public void run() {
+                relativeLayout.setBackgroundColor(Color.HSVToColor(0xff, values));
+            }
+        });
+        */
     }
 }
