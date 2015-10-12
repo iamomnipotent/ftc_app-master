@@ -206,13 +206,6 @@ public class kevinsop extends OpMode {
             red[3] = (red[0] + red[1] + red[2]) / 3;
         }
 
-        if(e_colorsensor.green() < 240) {
-            green[0] = e_colorsensor.green();
-            green[1] = green[0];
-            green[2] = green[1];
-            green[3] = (green[0] + green[1] + green[2]) / 3;
-        }
-
         if(e_colorsensor.blue() < 240) {
             blue[0] = e_colorsensor.blue();
             blue[1] = blue[0];
