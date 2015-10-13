@@ -70,7 +70,7 @@ public class ColorSensorDriver extends LinearOpMode {
         break;
     }
     led = hardwareMap.led.get("led");
-    t = hardwareMap.touchSensor.get("e_touch");
+    t = hardwareMap.touchSensor.get("t");
 
     waitForStart();
 
