@@ -53,7 +53,7 @@ import com.qualcomm.robotcore.hardware.ColorSensor;
  */
 public class HTRGBExample extends LinearOpMode {
 
-    ColorSensor sensorRGB;
+    ColorSensor sensorRGB;  // change this for actual testing
 
     public int[] red = new int[4];
     public int[] blue = new int[4];
@@ -66,7 +66,7 @@ public class HTRGBExample extends LinearOpMode {
         hardwareMap.logDevices();
 
         // get a reference to our ColorSensor object.
-        sensorRGB = hardwareMap.colorSensor.get("nxt");
+        sensorRGB = hardwareMap.colorSensor.get("nxt");     // change this too
 
         // bEnabled represents the state of the LED.
         boolean bEnabled = true;
@@ -151,7 +151,6 @@ public class HTRGBExample extends LinearOpMode {
                 blue[0] = sensorRGB.blue();
                 blue[1] = blue[0];
                 blue[2] = blue[1];
-                if (abs(blue[0]-blue[1]))
                 blue[3] = (blue[0] + blue[1] + blue[2]) / 3;
             }
             // send the info back to driver station using telemetry function.

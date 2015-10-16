@@ -64,11 +64,16 @@ public class kevinsop extends OpMode {
     // TouchSensor e_switch;
 
     public Boolean isPressed;
+    public Boolean motorReversed = false;
     public Boolean dpadDown;
     public Boolean dpadUp;
     public Boolean abutton;
     public Boolean bbutton;
     public Boolean xbutton;
+    public Boolean leftstick;
+
+    // public float xstick;
+    public double ystick;
 
     public float leftMotorPower;
     public float rightMotorPower;
@@ -77,12 +82,21 @@ public class kevinsop extends OpMode {
     public int[] green = new int[4];
     public int[] blue = new int[4];
 
+    public int currentloopcount;
+    public int bufferinitloopcount;
+    public int bufferfinalloopcount;
+    public int totalloopcount = 0;
+
     public boolean discard;
 
+    /*
     public DcMotor lf_motor;    // left front
     public DcMotor rf_motor;    // right front
     public DcMotor lr_motor;    // left rear
     public DcMotor rr_motor;    // right rear
+    */
+
+    public DcMotor testmotor;
 
     // public ServoController e_servocontroller;
     Servo e_servo;
@@ -148,9 +162,10 @@ public class kevinsop extends OpMode {
      */
     @Override
     public void init() {
-        e_touch = hardwareMap.touchSensor.get("e_touch");
-        e_servo = hardwareMap.servo.get("e_servo");
-        e_colorsensor = hardwareMap.colorSensor.get("e_colorsensor");
+        e_touch = hardwareMap.touchSensor.get("nxttouch");
+        e_servo = hardwareMap.servo.get("hitecservo");
+        e_colorsensor = hardwareMap.colorSensor.get("nxtcolor");
+        testmotor = hardwareMap.dcMotor.get("tetrixmotor");
 
         /*
         enableLed(e_touch.isPressed());
@@ -222,6 +237,13 @@ public class kevinsop extends OpMode {
             e_colorsensor.enableLed(true);
         }
 
+        if(!motorReversed) {
+            testmotor.setDirection(DcMotor.Direction.FORWARD);
+        }
+        else if(motorReversed) {
+            testmotor.setDirection(DcMotor.Direction.REVERSE);
+        }
+
         // e_servo.setPosition(e_servo_pos);
         // if(e_servocontroller.getPwmStatus() == ServoController.PwmStatus.DISABLED) {
         //     e_servocontroller.pwmEnable();
@@ -233,6 +255,9 @@ public class kevinsop extends OpMode {
         abutton = gamepad1.a;
         bbutton = gamepad1.b;
         xbutton = gamepad1.x;
+        ystick = gamepad1.left_stick_y;
+        // xstick = gamepad1.left_stick_x;
+        leftstick = gamepad1.left_stick_button;
 
         // leftMotorPower = gamepad1.left_stick_y;
         // rightMotorPower = gamepad1.right_stick_y;
@@ -257,10 +282,29 @@ public class kevinsop extends OpMode {
             e_servo_pos = 0.05;
         }
 
+        currentloopcount = totalloopcount;
+
+        if(leftstick) {
+            bufferinitloopcount = currentloopcount;
+        }
+        else {
+            bufferfinalloopcount = currentloopcount - bufferinitloopcount;
+            if (bufferfinalloopcount > 0 && bufferfinalloopcount < 100){
+                if(motorReversed == true){
+                    motorReversed = false;
+                }
+                else if(motorReversed == false){
+                    motorReversed = true;
+                }
+            }
+        }
+
         e_servo_pos = Range.clip(e_servo_pos, MIN_ESERVO_POS, MAX_ESERVO_POS);
 
         e_servo.setPosition(e_servo_pos);
         // e_servo.setPosition(0.9);
+
+        testmotor.setPower(ystick);
 
         /*
         lf_motor.setPower(leftMotorPower);
@@ -293,6 +337,7 @@ public class kevinsop extends OpMode {
         telemetry.addData("blue", blue[3]);
         telemetry.addData("green", green[3]);
         telemetry.addData("red", red[3]);
+        telemetry.addData("motorpower", ystick);
 
         if (red[3] > blue[3]) {
             telemetry.addData("color", "red");
@@ -308,5 +353,11 @@ public class kevinsop extends OpMode {
             }
         });
         */
+        totalloopcount++;
+        telemetry.addData("current loop count", currentloopcount);
+        telemetry.addData("bufferfinalloopcount", bufferfinalloopcount);
+        telemetry.addData("bufferinitloopcount", bufferinitloopcount);
+        telemetry.addData("is motor reversed", motorReversed);
+        telemetry.addData("motor direction", testmotor.getDirection());
     }
 }
