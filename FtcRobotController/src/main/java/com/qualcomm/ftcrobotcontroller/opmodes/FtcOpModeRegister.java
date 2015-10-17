@@ -63,6 +63,10 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register ("PushBotManual", PushBotManual.class);
 
     manager.register("HTRGBExample", HTRGBExample.class);
+
+    manager.register("DetectColor", DetectColor.class);
+    manager.register("LinearDetectColor", LinearDetectColor.class);
+
     /*
      * Uncomment any of the following lines if you want to register an op mode.
      */

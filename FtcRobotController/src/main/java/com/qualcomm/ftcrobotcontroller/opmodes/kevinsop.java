@@ -39,6 +39,7 @@ import com.qualcomm.ftcrobotcontroller.R;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
 import com.qualcomm.robotcore.hardware.LED;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -46,6 +47,7 @@ import com.qualcomm.robotcore.hardware.TouchSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import android.graphics.Bitmap;
 
 
 import java.text.SimpleDateFormat;
@@ -56,12 +58,14 @@ import java.util.Date;
  * <p>
  *Enables control of the robot via the gamepad
  */
-public class kevinsop extends OpMode {
+public class kevinsop extends OpModeCamera {
+
+    int ds2 = 2;  // additional downsampling of the image
+    private int looped = 0;
+    private long lastLoopTime = 0;
 
     private String startDate;
     private ElapsedTime runtime = new ElapsedTime();
-
-    // TouchSensor e_switch;
 
     public Boolean isPressed;
     public Boolean motorReversed = false;
@@ -78,9 +82,11 @@ public class kevinsop extends OpMode {
     public float leftMotorPower;
     public float rightMotorPower;
 
+    /*
     public int[] red = new int[4];
     public int[] green = new int[4];
     public int[] blue = new int[4];
+    */
 
     public int currentloopcount;
     public int bufferinitloopcount;
@@ -97,6 +103,7 @@ public class kevinsop extends OpMode {
     */
 
     public DcMotor testmotor;
+    public DcMotorController testmotorctrl;
 
     // public ServoController e_servocontroller;
     Servo e_servo;
@@ -107,16 +114,19 @@ public class kevinsop extends OpMode {
     final static double MAX_ESERVO_POS = 0.95;
     final static double MIN_ESERVO_POS = 0.05;
 
+    TouchSensor e_touch;
+
     // public enum e_colorsensorDevice {ADAFRUIT, HITECHNIC_NXT, MODERN_ROBOTICS_I2C};
     // public e_colorsensorDevice device = e_colorsensorDevice.MODERN_ROBOTICS_I2C;
 
+    /*
     ColorSensor e_colorsensor;
     // DeviceInterfaceModule cdim;
-    TouchSensor e_touch;
     LED led;
 
     float hsvValues[] = {0F,0F,0F};
     final float values[] = hsvValues;
+    */
 
     // final View relativeLayout = ((Activity) hardwareMap.appContext).findViewById(R.id.RelativeLayout);
 
@@ -164,8 +174,18 @@ public class kevinsop extends OpMode {
     public void init() {
         e_touch = hardwareMap.touchSensor.get("nxttouch");
         e_servo = hardwareMap.servo.get("hitecservo");
-        e_colorsensor = hardwareMap.colorSensor.get("nxtcolor");
+        // e_colorsensor = hardwareMap.colorSensor.get("nxtcolor");
         testmotor = hardwareMap.dcMotor.get("tetrixmotor");
+        testmotorctrl = hardwareMap.dcMotorController.get("hitecmotorctrl");
+
+        setCameraDownsampling(8);
+        // parameter determines how downsampled you want your images
+        // 8, 4, 2, or 1.
+        // higher number is more downsampled, so less resolution but faster
+        // 1 is original resolution, which is detailed but slow
+        // must be called before super.init sets up the camera
+
+        super.init(); // inits camera functions, starts preview callback
 
         /*
         enableLed(e_touch.isPressed());
@@ -214,6 +234,39 @@ public class kevinsop extends OpMode {
      */
     @Override
     public void loop() {
+        long startTime = System.currentTimeMillis();
+        if (imageReady()) { // only do this if an image has been returned from the camera
+            int redValue = 0;
+            int blueValue = 0;
+            int greenValue = 0;
+
+            Bitmap rgbImage;
+            rgbImage = convertYuvImageToRgb(yuvImage, width, height, ds2);
+            for (int x = 0; x < width / ds2; x++) {
+                for (int y = 0; y < height / ds2; y++) {
+                    int pixel = rgbImage.getPixel(x, y);
+                    redValue += red(pixel);
+                    blueValue += blue(pixel);
+                    greenValue += green(pixel);
+                }
+            }
+            int color = highestColor(redValue, greenValue, blueValue);
+            String colorString = "";
+            switch (color) {
+                case 0:
+                    colorString = "RED";
+                    break;
+                case 1:
+                    colorString = "GREEN";
+                    break;
+                case 2:
+                    colorString = "BLUE";
+            }
+            telemetry.addData("Color:", "Color detected is: " + colorString);
+
+        }
+        // testmotorctrl.setMotorControllerDeviceMode(DcMotorController.DeviceMode.SWITCHING_TO_READ_MODE);
+        /*
         if(e_colorsensor.red() < 240) {
             red[0] = e_colorsensor.red();
             red[1] = red[0];
@@ -229,13 +282,16 @@ public class kevinsop extends OpMode {
         }
 
         Color.RGBToHSV(red[3], green[3], blue[3], hsvValues);
+        */
 
+        /*
         if(e_touch.isPressed()) {
             e_colorsensor.enableLed(false);
         }
         else {
             e_colorsensor.enableLed(true);
         }
+        */
 
         if(!motorReversed) {
             testmotor.setDirection(DcMotor.Direction.FORWARD);
@@ -332,19 +388,29 @@ public class kevinsop extends OpMode {
         // telemetry.addData("servo pos from servoctrl function", e_servocontroller.getServoPosition(1));
         telemetry.addData("current servo position", e_servo_pos);
         telemetry.addData("current acceleration", e_servo_delta);
+
+        /*
         telemetry.addData("hue", hsvValues[0]);
         telemetry.addData("alpha", e_colorsensor.alpha());
+        */
+
+        /*
         telemetry.addData("blue", blue[3]);
         telemetry.addData("green", green[3]);
         telemetry.addData("red", red[3]);
-        telemetry.addData("motorpower", ystick);
+        */
 
+        telemetry.addData("stick value", ystick);
+        // telemetry.addData("motor power", testmotorctrl.getMotorPower(1));
+
+        /*
         if (red[3] > blue[3]) {
             telemetry.addData("color", "red");
         }
         if (blue[3] > red[3]) {
             telemetry.addData("color", "blue");
         }
+        */
 
         /*
         relativeLayout.post(new Runnable() {
@@ -353,11 +419,16 @@ public class kevinsop extends OpMode {
             }
         });
         */
+
         totalloopcount++;
         telemetry.addData("current loop count", currentloopcount);
         telemetry.addData("bufferfinalloopcount", bufferfinalloopcount);
         telemetry.addData("bufferinitloopcount", bufferinitloopcount);
         telemetry.addData("is motor reversed", motorReversed);
         telemetry.addData("motor direction", testmotor.getDirection());
+        long endTime = System.currentTimeMillis();
+        telemetry.addData("Dims", Integer.toString(width / ds2) + " x " + Integer.toString(height / ds2));
+        telemetry.addData("Loop Time", Long.toString(endTime - startTime));
+        telemetry.addData("Loop to Loop Time", Long.toString(endTime - lastLoopTime));
     }
 }
