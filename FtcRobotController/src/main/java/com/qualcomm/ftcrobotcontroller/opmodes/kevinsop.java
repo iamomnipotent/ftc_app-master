@@ -31,27 +31,14 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import android.app.Activity;
-import android.graphics.Color;
-import android.view.View;
+import android.graphics.Bitmap;
 
-import com.qualcomm.ftcrobotcontroller.R;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
-import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
-import com.qualcomm.robotcore.hardware.LED;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.TouchSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import android.graphics.Bitmap;
-
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * TeleOp Mode
@@ -60,6 +47,7 @@ import java.util.Date;
  */
 public class kevinsop extends OpModeCamera {
 
+    //Camera Variables
     int ds2 = 2;  // additional downsampling of the image
     private int looped = 0;
     private long lastLoopTime = 0;
@@ -318,10 +306,10 @@ public class kevinsop extends OpModeCamera {
         // leftMotorPower = gamepad1.left_stick_y;
         // rightMotorPower = gamepad1.right_stick_y;
 
-        if(dpadDown) {
+        if(gamepad1.dpad_down) {
             e_servo_pos = e_servo_pos - e_servo_delta;
         }
-        if(dpadUp) {
+        if(gamepad1.dpad_up) {
             e_servo_pos = e_servo_pos + e_servo_delta;
         }
         else {

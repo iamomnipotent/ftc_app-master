@@ -34,8 +34,8 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     }
 
     public static void setCameraDisplayOrientation(Activity activity, int cameraId, Camera camera) {
-        Camera.CameraInfo info = new Camera.CameraInfo();
-        Camera.getCameraInfo(cameraId, info);
+        android.hardware.Camera.CameraInfo info = new android.hardware.Camera.CameraInfo();
+        android.hardware.Camera.getCameraInfo(cameraId, info);
         int rotation = activity.getWindowManager().getDefaultDisplay().getRotation();
         int degrees = 0;
         switch (rotation) {
@@ -69,7 +69,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         // The Surface has been created, now tell the camera where to draw the preview.
         try {
             Camera.Parameters parameters = mCamera.getParameters();
-   //         mCamera.setDisplayOrientation(90);
+            //         mCamera.setDisplayOrientation(90);
             setCameraDisplayOrientation(((Activity) this.getContext()), Camera.CameraInfo.CAMERA_FACING_FRONT, mCamera);
 
             mCamera.setParameters(parameters);
