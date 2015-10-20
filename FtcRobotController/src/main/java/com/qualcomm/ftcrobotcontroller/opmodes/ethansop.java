@@ -21,6 +21,7 @@ public class ethansop extends OpModeCamera {
     Boolean button = false;
     Boolean prevbutton = false;
     int count=0;
+    String motorState;
 
     Servo e_servo;
     public double e_servo_delta = 0.01;
@@ -58,12 +59,12 @@ public class ethansop extends OpModeCamera {
 
         final View relativeLayout = ((Activity) hardwareMap.appContext).findViewById(R.id.RelativeLayout);
 
-        final float values[] = {0F, 0F, 0F};
+        // final float values[] = {0F, 0F, 0F};
 
 
         //MOTORS
         e_motor_power = gamepad1.left_stick_y;
-        e_motor.setPower(gamepad1.left_stick_y);
+        e_motor.setPower(scaleInput(e_motor_power));    // utilizes scaling to accurately control motor
 
 
         //MOTOR DIRECTION SWITCH
@@ -75,9 +76,11 @@ public class ethansop extends OpModeCamera {
 
         if (count == 0) {
             e_motor.setDirection(DcMotor.Direction.FORWARD);
+            motorState = "forward";
         }
         else {
             e_motor.setDirection(DcMotor.Direction.REVERSE);
+            motorState = "reverse";
         }
 
 
@@ -126,7 +129,7 @@ public class ethansop extends OpModeCamera {
                 colorString = "RED";
             }
             else {
-                    colorString = "BLUE";
+                colorString = "BLUE";
             }
             telemetry.addData("Color:", "Color detected is: " + colorString);
 
@@ -144,6 +147,11 @@ public class ethansop extends OpModeCamera {
             }
         });
 
+        // TELEMETRY START
+        telemetry.addData("Motor direction", motorState);
+        telemetry.addData("Scaled motor power", scaleInput(e_motor_power));
+        // TELEMETRY END
+
 
     }
 
@@ -159,11 +167,10 @@ public class ethansop extends OpModeCamera {
      * the robot more precisely at slower speeds.
      */
     double scaleInput(double dVal) {
-        double[] scaleArray = {0.0, 0.05, 0.09, 0.10, 0.12, 0.15, 0.18, 0.24,
-                0.30, 0.36, 0.43, 0.50, 0.60, 0.72, 0.85, 1.00, 1.00};
+        double[] scaleArray = {0.0,0.25,0.50,0.75,1.00};
 
         // get the corresponding index for the scaleInput array.
-        int index = (int) (dVal * 16.0);
+        int index = (int) (dVal * 4.0);
 
         // index should be positive.
         if (index < 0) {
@@ -171,8 +178,8 @@ public class ethansop extends OpModeCamera {
         }
 
         // index cannot exceed size of array minus 1.
-        if (index > 16) {
-            index = 16;
+        if (index > 4) {
+            index = 4;
         }
 
         // get value from the array.
