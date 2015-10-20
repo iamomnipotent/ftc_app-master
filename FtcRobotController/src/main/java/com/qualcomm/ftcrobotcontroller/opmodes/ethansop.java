@@ -2,6 +2,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.view.View;
 
 import com.qualcomm.ftcrobotcontroller.R;
