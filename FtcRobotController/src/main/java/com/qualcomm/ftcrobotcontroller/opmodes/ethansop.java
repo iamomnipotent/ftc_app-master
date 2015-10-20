@@ -2,6 +2,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.view.View;
 
 import com.qualcomm.ftcrobotcontroller.R;
@@ -59,7 +60,11 @@ public class ethansop extends OpModeCamera {
 
         final View relativeLayout = ((Activity) hardwareMap.appContext).findViewById(R.id.RelativeLayout);
 
+<<<<<<< HEAD
         // final float values[] = {0F, 0F, 0F};
+=======
+        final float values[] = {300, 100, 100};
+>>>>>>> origin/master
 
 
         //MOTORS
@@ -133,6 +138,9 @@ public class ethansop extends OpModeCamera {
             }
             telemetry.addData("Color:", "Color detected is: " + colorString);
 
+            int pixel = rgbImage.getPixel(20, 20);
+            telemetry.addData("pixel: ", pixel);
+
         }
         long endTime = System.currentTimeMillis();
         telemetry.addData("Dims", Integer.toString(width / ds2) + " x " + Integer.toString(height / ds2));
@@ -143,9 +151,11 @@ public class ethansop extends OpModeCamera {
 
         relativeLayout.post(new Runnable() {
             public void run() {
-                relativeLayout.setBackgroundColor(16711935); //16711935 is FF00FF in hex, or pink
+                relativeLayout.setBackgroundColor(Color.HSVToColor(0xff, values)); //16711935 is FF00FF in hex, or pink
             }
         });
+        telemetry.addData("Magenta:", Color.HSVToColor(0xff, values));
+
 
         // TELEMETRY START
         telemetry.addData("Motor direction", motorState);
