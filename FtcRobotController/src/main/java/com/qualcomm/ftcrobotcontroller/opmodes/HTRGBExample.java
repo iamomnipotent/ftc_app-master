@@ -35,7 +35,6 @@ import android.app.Activity;
 import android.graphics.Color;
 import android.view.View;
 
-import com.qualcomm.ftccommon.DbgLog;
 import com.qualcomm.ftcrobotcontroller.R;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.ColorSensor;
@@ -160,6 +159,8 @@ public class HTRGBExample extends LinearOpMode {
             telemetry.addData("Blue ", sensorRGB.blue());
             telemetry.addData("Hue", hsvValues[0]);
 
+
+
             if (blue[3] < red[3]) {
                 telemetry.addData("color", "red");
             }
@@ -175,6 +176,8 @@ public class HTRGBExample extends LinearOpMode {
                     relativeLayout.setBackgroundColor(Color.HSVToColor(0xff, values));
                 }
             });
+
+
 
             // wait a hardware cycle before iterating.
             waitOneFullHardwareCycle();
