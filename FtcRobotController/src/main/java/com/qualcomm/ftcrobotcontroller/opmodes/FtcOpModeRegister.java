@@ -57,6 +57,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register("Kevin's Test Op", kevinsop.class);
     manager.register("Ethan's Test Op", ethansop.class);
     manager.register("Frank Servo Test Op", frankservo.class);
+    manager.register("Encoder Test", encodertest.class);
 
     manager.register("NullOp", NullOp.class);
     manager.register("test auto", testauto.class);

@@ -7,7 +7,9 @@ import android.view.View;
 
 import com.qualcomm.ftcrobotcontroller.R;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.UltrasonicSensor;
 import com.qualcomm.robotcore.util.Range;
 /**
  * TeleOp Mode
@@ -17,8 +19,13 @@ import com.qualcomm.robotcore.util.Range;
 public class ethansop extends OpModeCamera {
 
     DcMotor e_motor;
+    final int b_motorChannel=1;
+
     public double e_motor_power;
-    
+    DcMotorController e_motorController;
+    DcMotorController b_motorController;
+    public int b_encoder;
+
     Boolean button = false;
     Boolean prevbutton = false;
     int count=0;
@@ -33,6 +40,9 @@ public class ethansop extends OpModeCamera {
     int ds2 = 2;  // additional downsampling of the image
     private int looped = 0;
     private long lastLoopTime = 0;
+
+    UltrasonicSensor e_ultra;
+    public double ultra_level;
     /*
      * Code to run when the op mode is first enabled goes here
      * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
@@ -42,8 +52,14 @@ public class ethansop extends OpModeCamera {
 
         e_motor = hardwareMap.dcMotor.get("tetrixmotor");
         e_motor.setDirection(DcMotor.Direction.FORWARD);
+        e_motorController = hardwareMap.dcMotorController.get("hitecmotorctrl");
+        b_motorController = hardwareMap.dcMotorController.get("hitecmotorctrl1");
+
+        //b_motorController.setMotorChannelMode(b_motorChannel, DcMotorController.RunMode.RUN_USING_ENCODERS);
+
 
         e_servo = hardwareMap.servo.get("hitecservo");
+        e_ultra = hardwareMap.ultrasonicSensor.get("ultrasonic");
 
         setCameraDownsampling(8);
         super.init(); // inits camera functions, starts preview callback
@@ -152,8 +168,15 @@ public class ethansop extends OpModeCamera {
         });
         telemetry.addData("Magenta:", Color.HSVToColor(0xff, values));
 
+        ultra_level = e_ultra.getUltrasonicLevel();
 
         // TELEMETRY START
+        e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
+        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
+        telemetry.addData("Encoder:", e_motor.getCurrentPosition());
+        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
+
+        telemetry.addData("Ultrasonic:", ultra_level);
         telemetry.addData("Motor direction", motorState);
         telemetry.addData("Scaled motor power", scaleInput(e_motor_power));
         // TELEMETRY END
