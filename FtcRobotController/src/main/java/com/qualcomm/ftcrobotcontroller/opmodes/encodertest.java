@@ -67,9 +67,9 @@ public class encodertest extends OpMode {
         e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
         e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
         try {
-            wait (10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.sleep(1);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
         }
         telemetry.addData("Encoder:", e_motor.getCurrentPosition());
         motor_pos = encoder ();
