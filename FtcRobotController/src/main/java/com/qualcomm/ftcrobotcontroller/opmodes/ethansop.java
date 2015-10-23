@@ -60,11 +60,7 @@ public class ethansop extends OpModeCamera {
 
         final View relativeLayout = ((Activity) hardwareMap.appContext).findViewById(R.id.RelativeLayout);
 
-<<<<<<< HEAD
-        // final float values[] = {0F, 0F, 0F};
-=======
         final float values[] = {300, 100, 100};
->>>>>>> origin/master
 
 
         //MOTORS
