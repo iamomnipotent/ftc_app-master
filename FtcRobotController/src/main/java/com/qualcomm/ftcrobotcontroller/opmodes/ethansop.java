@@ -19,12 +19,9 @@ import com.qualcomm.robotcore.util.Range;
 public class ethansop extends OpModeCamera {
 
     DcMotor e_motor;
-    final int b_motorChannel=1;
-
     public double e_motor_power;
     DcMotorController e_motorController;
     DcMotorController b_motorController;
-    public int b_encoder;
 
     Boolean button = false;
     Boolean prevbutton = false;

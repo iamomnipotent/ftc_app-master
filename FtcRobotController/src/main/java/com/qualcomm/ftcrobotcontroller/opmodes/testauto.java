@@ -31,13 +31,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import android.graphics.Bitmap;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * TeleOp Mode
@@ -59,6 +57,12 @@ public class testauto extends OpModeCamera {
 
     public int autoStage = 1;
 
+    int ds2 = 2;  // additional downsampling of the image
+    int redValue = 0;
+    int blueValue = 0;
+    int greenValue = 0;
+
+
     @Override
     public void init() {
         servo = hardwareMap.servo.get("servo");
@@ -71,7 +75,7 @@ public class testauto extends OpModeCamera {
        */
     @Override
     public void init_loop() {
-        servo.setPosition(1.0);
+        servo.setPosition(0.95);
         runtime.reset();
         firstInterval.reset();
         motor.setDirection(DcMotor.Direction.REVERSE);
@@ -83,27 +87,73 @@ public class testauto extends OpModeCamera {
      */
     @Override
     public void loop() {
-        if(firstInterval.time() < 3.0) {
-            if(autoStage == 1) {
-                servo.setPosition(0.05);
-                autoStage++;
-            }
-            if(autoStage == 2) {
-                servo.setPosition(0.95);
+        //CAMERA CODE
+        long startTime = System.currentTimeMillis();
+        if (imageReady()) { // only do this if an image has been returned from the camera
+            redValue = 0;
+            blueValue = 0;
+            greenValue = 0;
+
+            Bitmap rgbImage;
+            rgbImage = convertYuvImageToRgb(yuvImage, width, height, ds2);
+            for (int x = 0; x < width / ds2; x++) {
+                for (int y = 0; y < height / ds2; y++) {
+                    int pixel = rgbImage.getPixel(x, y);
+                    redValue += red(pixel);
+                    blueValue += blue(pixel);
+                    greenValue += green(pixel);
+                }
             }
         }
-        if (firstInterval.time() >= 3.0) {
-            servo.setPosition(0.50);
-            motor.setPower(1.0);
+        //END OF CAMERA CODE
+
+        if(!gamepad1.a) {
+            if (firstInterval.time() < 3.0) {
+                if (autoStage == 1) {
+                    servo.setPosition(0.05);
+                    autoStage++;
+                }
+                if (autoStage == 2) {
+                    servo.setPosition(0.95);
+                }
+            }
+            if (firstInterval.time() >= 3.0) {
+                servo.setPosition(0.50);
+                motor.setPower(1.0);
+            }
+            if (firstInterval.time() >= 6.0) {
+                motor.setPower(0.0);
+                autoStage = 1;
+                firstInterval.reset();
+            }
         }
-        if (firstInterval.time() >= 6.0) {
-            motor.setPower(0.0);
-            autoStage = 1;
-            firstInterval.reset();
+        else {
+            if(redValue > blueValue)
+            {
+                telemetry.addData("RED RED RED RED", redValue);
+                motor.setDirection(DcMotor.Direction.FORWARD);
+                motor.setPower(1.0);
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                motor.setDirection(DcMotor.Direction.REVERSE);
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                motor.setDirection(DcMotor.Direction.FORWARD);
+            }
+            else
+            {
+                telemetry.addData("BLUE BLUE BLUE", blueValue);
+            }
         }
 
-
-        telemetry.addData("time elapsed", firstInterval.toString());
+        telemetry.addData("getRuntime()", getRuntime());
+        telemetry.addData("Interval", firstInterval.toString());
         telemetry.addData("Auto stage", autoStage);
     }
 }

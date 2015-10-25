@@ -40,7 +40,7 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
  * <p>
  *Enables control of the robot via the gamepad
  */
-public class encodertest extends OpMode {
+public class encodertest1 extends OpMode {
 
 
     DcMotor e_motor;
@@ -66,14 +66,10 @@ public class encodertest extends OpMode {
 
         e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
         e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if (gamepad1.a) {
+            motor_pos = encoder();
+            telemetry.addData("motor_pos:", motor_pos);
         }
-        telemetry.addData("Encoder:", e_motor.getCurrentPosition());
-        motor_pos = encoder ();
-        telemetry.addData("motor_pos:", motor_pos);
         e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
     }
 
@@ -85,14 +81,20 @@ public class encodertest extends OpMode {
     public void stop() {
     }
 
-    int encoder () {
+
+    synchronized int encoder () {
+        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
+        try {
+            Thread.sleep(15);
+        } catch (InterruptedException e) {
+            e.printStackTrace();}
         int l_return = 0;
 
         if (e_motor != null)
         {
             l_return = e_motor.getCurrentPosition ();
         }
-
+        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
         return l_return;
 
     }

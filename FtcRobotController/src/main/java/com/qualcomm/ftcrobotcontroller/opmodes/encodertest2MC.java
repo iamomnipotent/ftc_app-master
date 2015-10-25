@@ -40,18 +40,22 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
  * <p>
  *Enables control of the robot via the gamepad
  */
-public class encodertest extends OpMode {
+public class encodertest2MC extends OpMode {
 
 
     DcMotor e_motor;
+    DcMotor encoder;
     DcMotorController e_motorController;
+    DcMotorController b_motorController;
     public int motor_pos;
 
     @Override
     public void init() {
 
         e_motor = hardwareMap.dcMotor.get("tetrixmotor");
+        encoder = hardwareMap.dcMotor.get("encoder");
         e_motorController = hardwareMap.dcMotorController.get("hitecmotorctrl");
+        b_motorController = hardwareMap.dcMotorController.get("hitecmotorctrl1");
 
     }
 
@@ -64,17 +68,10 @@ public class encodertest extends OpMode {
 
         e_motor.setPower(gamepad1.left_stick_y);
 
-        e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
-        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        telemetry.addData("Encoder:", e_motor.getCurrentPosition());
+        b_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
+        telemetry.addData("Encoder:", encoder.getCurrentPosition());
         motor_pos = encoder ();
         telemetry.addData("motor_pos:", motor_pos);
-        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
     }
 
     /*
@@ -88,9 +85,9 @@ public class encodertest extends OpMode {
     int encoder () {
         int l_return = 0;
 
-        if (e_motor != null)
+        if (encoder != null)
         {
-            l_return = e_motor.getCurrentPosition ();
+            l_return = encoder.getCurrentPosition ();
         }
 
         return l_return;
