@@ -70,12 +70,16 @@ public class encodertest extends OpMode {
             e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);}
         while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.READ_ONLY)
         */
+        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         telemetry.addData("Encoder:", e_motor.getCurrentPosition());
+
+        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
