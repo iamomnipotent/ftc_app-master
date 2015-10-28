@@ -65,16 +65,27 @@ public class encodertest extends OpMode {
         e_motor.setPower(gamepad1.left_stick_y);
 
         e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
-        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
+        /*
+        do {
+            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);}
+        while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.READ_ONLY)
+        */
         try {
-            Thread.sleep(10);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         telemetry.addData("Encoder:", e_motor.getCurrentPosition());
-        motor_pos = encoder ();
-        telemetry.addData("motor_pos:", motor_pos);
-        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        /*
+        do {
+            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);}
+        while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.WRITE_ONLY)
+        */
     }
 
     /*
@@ -87,13 +98,6 @@ public class encodertest extends OpMode {
 
     int encoder () {
         int l_return = 0;
-
-        if (e_motor != null)
-        {
-            l_return = e_motor.getCurrentPosition ();
-        }
-
-        return l_return;
-
+//FUNCTION I PLAN TO MAKE FOR READING THE ENCODER
     }
 }

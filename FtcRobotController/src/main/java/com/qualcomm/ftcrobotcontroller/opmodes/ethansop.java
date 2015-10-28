@@ -160,7 +160,7 @@ public class ethansop extends OpModeCamera {
 
         relativeLayout.post(new Runnable() {
             public void run() {
-                relativeLayout.setBackgroundColor(Color.HSVToColor(0xff, values)); //16711935 is FF00FF in hex, or pink
+                relativeLayout.setBackgroundColor(Color.HSVToColor(0xff, values));
             }
         });
         telemetry.addData("Magenta:", Color.HSVToColor(0xff, values));
