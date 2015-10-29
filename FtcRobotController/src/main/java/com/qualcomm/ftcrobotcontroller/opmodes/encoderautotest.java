@@ -34,27 +34,26 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
+import com.qualcomm.robotcore.util.ElapsedTime;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * TeleOp Mode
  * <p>
  *Enables control of the robot via the gamepad
  */
-public class encodertest extends OpMode {
-
+public class encoderautotest extends OpMode {
 
     DcMotor e_motor;
-    DcMotorController e_motorController;
-    // public int motor_pos;
+    DcMotorController e_motorcontroller;
 
     @Override
     public void init() {
-
         e_motor = hardwareMap.dcMotor.get("tetrixmotor");
-        e_motorController = hardwareMap.dcMotorController.get("hitecmotorctrl");
+        e_motorcontroller = hardwareMap.dcMotorController.get("hitecmotorctrl");
         e_motor.setChannelMode(DcMotorController.RunMode.RESET_ENCODERS);
-        // e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_WRITE);
-
     }
 
     /*
@@ -62,52 +61,49 @@ public class encodertest extends OpMode {
        * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
        */
 
-
+    /*
     @Override
-    public void loop() {
-
-        e_motor.setPower(gamepad1.left_stick_y);
-
-        e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
-
-        do {
-            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);}
-        while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.READ_ONLY);
-
-        /*
-        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        */
-
-        // telemetry.addData("Encoder:", scaleEncoder(e_motor)); // e_motor.getCurrentPosition());
-        scaleEncoder(e_motor);
-
-        /*
-        e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
-        try {
-            Thread.sleep(20);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        */  // THIS WORKS BUT HUGE LAG
-
-        do {
-            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);}
-        while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.WRITE_ONLY);
-        // DOES NOT WORK
+    public void init_loop() {
 
     }
+    */
 
     /*
      * This method will be called repeatedly in a loop
      * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#loop()
      */
     @Override
-    public void stop() {
+    public void loop() {
+
+        e_motor.setPower(1.0);
+
+        e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
+        /*
+        do {
+            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);}
+        while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.READ_ONLY)
+        */
+        e_motorcontroller.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        telemetry.addData("Encoder:", scaleEncoder(e_motor)); // e_motor.getCurrentPosition());
+
+        e_motorcontroller.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        /*
+        do {
+            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);}
+        while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.WRITE_ONLY)
+        */
+
     }
 
     public double scaleEncoder (DcMotor motor) {
@@ -117,8 +113,7 @@ public class encodertest extends OpMode {
             l_return = (double) motor.getCurrentPosition()/100;        // convert result to double datatype
         }
 
-        telemetry.addData("Encoder", l_return);
-
         return l_return;
     }
+
 }
