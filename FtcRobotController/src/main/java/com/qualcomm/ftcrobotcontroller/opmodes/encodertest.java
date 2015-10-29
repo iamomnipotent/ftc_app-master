@@ -70,35 +70,72 @@ public class encodertest extends OpMode {
 
         e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
 
+        /*
         do {
             e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);}
         while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.READ_ONLY);
+        */
 
         /*
         e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
+
         try {
-            Thread.sleep(100);
+            Thread.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        */
+        telemetry.addData("mctrlstatus", e_motorController.getMotorControllerDeviceMode());
+        telemetry.addData("Encoder:", scaleEncoder(e_motor)); // e_motor.getCurrentPosition());
+        try {
+            Thread.sleep(30);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
-        // telemetry.addData("Encoder:", scaleEncoder(e_motor)); // e_motor.getCurrentPosition());
-        scaleEncoder(e_motor);
-
-        /*
         e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
+
+        try {
+            Thread.sleep(40);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }   // SIGNIFICANT LAG
+        /*
         try {
             Thread.sleep(20);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        */  // THIS WORKS BUT HUGE LAG
+        }   // SIGNIFICANT LAG
+        */
 
+        if(e_motorController.getMotorControllerDeviceMode() == DcMotorController.DeviceMode.SWITCHING_TO_WRITE_MODE || e_motorController.getMotorControllerDeviceMode() == DcMotorController.DeviceMode.WRITE_ONLY){
+            e_motor.setPower(gamepad1.left_stick_y);
+            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        if(e_motorController.getMotorControllerDeviceMode() == DcMotorController.DeviceMode.SWITCHING_TO_READ_MODE || e_motorController.getMotorControllerDeviceMode() == DcMotorController.DeviceMode.READ_ONLY){
+            telemetry.addData("encoder", scaleEncoder(e_motor));
+            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        // THIS DOESN'T WORK YET, BUT I THINK IT HAS POTENTIALS, WE JUST HAVE TO MAKE SURE THAT THE ENCODER VALUE STAYS THERE AFTER IT'S SWITCHED TO WRITE MODE
+        // SO FAR IT ONLY SHOWS UP SPORADICALLY WHEN THE THING IS IN READ/SWITCHING TO READ MODES
+
+        /*
         do {
             e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);}
         while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.WRITE_ONLY);
         // DOES NOT WORK
+        */
+
+        telemetry.addData("mctrlstatus", e_motorController.getMotorControllerDeviceMode());
 
     }
 
@@ -116,8 +153,6 @@ public class encodertest extends OpMode {
         if (e_motor != null) {
             l_return = (double) motor.getCurrentPosition()/100;        // convert result to double datatype
         }
-
-        telemetry.addData("Encoder", l_return);
 
         return l_return;
     }
