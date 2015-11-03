@@ -32,8 +32,10 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import android.graphics.Bitmap;
+import android.hardware.Camera;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
@@ -67,6 +69,8 @@ public class testauto extends OpModeCamera {
     public void init() {
         servo = hardwareMap.servo.get("servo");
         motor = hardwareMap.dcMotor.get("motor");
+        setCameraDownsampling(8);
+        super.init();
     }
 
     /*
@@ -75,10 +79,9 @@ public class testauto extends OpModeCamera {
        */
     @Override
     public void init_loop() {
-        servo.setPosition(0.95);
-        runtime.reset();
-        firstInterval.reset();
+        // servo.setPosition(0.95);
         motor.setDirection(DcMotor.Direction.REVERSE);
+        motor.setChannelMode(DcMotorController.RunMode.RUN_TO_POSITION);
     }
 
     /*
@@ -87,6 +90,7 @@ public class testauto extends OpModeCamera {
      */
     @Override
     public void loop() {
+        motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
         //CAMERA CODE
         long startTime = System.currentTimeMillis();
         if (imageReady()) { // only do this if an image has been returned from the camera
@@ -104,56 +108,22 @@ public class testauto extends OpModeCamera {
                     greenValue += green(pixel);
                 }
             }
-        }
-        //END OF CAMERA CODE
 
-        if(!gamepad1.a) {
-            if (firstInterval.time() < 3.0) {
-                if (autoStage == 1) {
-                    servo.setPosition(0.05);
-                    autoStage++;
-                }
-                if (autoStage == 2) {
-                    servo.setPosition(0.95);
-                }
-            }
-            if (firstInterval.time() >= 3.0) {
-                servo.setPosition(0.50);
-                motor.setPower(1.0);
-            }
-            if (firstInterval.time() >= 6.0) {
-                motor.setPower(0.0);
-                autoStage = 1;
-                firstInterval.reset();
-            }
-        }
-        else {
-            if(redValue > blueValue)
-            {
+            if (redValue > blueValue) {
                 telemetry.addData("RED RED RED RED", redValue);
                 motor.setDirection(DcMotor.Direction.FORWARD);
-                motor.setPower(1.0);
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                motor.setDirection(DcMotor.Direction.REVERSE);
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                motor.setDirection(DcMotor.Direction.FORWARD);
-            }
-            else
-            {
+                motor.setTargetPosition(1440);
+            } else if (blueValue > redValue) {
                 telemetry.addData("BLUE BLUE BLUE", blueValue);
+                motor.setDirection(DcMotor.Direction.REVERSE);
+                motor.setTargetPosition(770);
             }
-        }
 
-        telemetry.addData("getRuntime()", getRuntime());
-        telemetry.addData("Interval", firstInterval.toString());
-        telemetry.addData("Auto stage", autoStage);
+            int pixel = rgbImage.getPixel(20, 20);
+            telemetry.addData("pixel: ", pixel);
+        }
+        else {
+            telemetry.addData("Camera not started", "not started");
+        }
     }
 }
