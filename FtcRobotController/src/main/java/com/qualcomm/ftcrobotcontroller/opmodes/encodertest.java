@@ -42,10 +42,12 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
  */
 public class encodertest extends OpMode {
 
-
     DcMotor e_motor;
+    DcMotorController.DeviceMode devMode;
     DcMotorController e_motorController;
     // public int motor_pos;
+
+    int loopCount = 1;
 
     @Override
     public void init() {
@@ -57,6 +59,14 @@ public class encodertest extends OpMode {
 
     }
 
+    @Override
+    public void init_loop() {
+        devMode = DcMotorController.DeviceMode.WRITE_ONLY;
+
+        e_motor.setDirection(DcMotor.Direction.REVERSE);
+        e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
+    }
+
     /*
        * Code to run when the op mode is first enabled goes here
        * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
@@ -66,9 +76,26 @@ public class encodertest extends OpMode {
     @Override
     public void loop() {
 
-        e_motor.setPower(gamepad1.left_stick_y);
+        if(allowedToWrite()) {
+            e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
+            e_motor.setPower(gamepad1.left_stick_y);
+        }
+        if(loopCount % 17 == 0) {
+            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
+        }
+        if(allowedToRead()) {
+            // Update the reads after some loops, when the command has successfully propagated through.
+            telemetry.addData("Text", "free flow text");
+            telemetry.addData("motor power", e_motor.getPower());
+            telemetry.addData("motor position", scaleEncoder(e_motor));
+            telemetry.addData("mctrl state", e_motorController.getMotorControllerDeviceMode());
 
-        e_motor.setChannelMode(DcMotorController.RunMode.RUN_USING_ENCODERS);
+            e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.WRITE_ONLY);
+            loopCount = 0;
+        }
+
+        devMode = e_motorController.getMotorControllerDeviceMode();
+        loopCount++;
 
         /*
         do {
@@ -107,6 +134,7 @@ public class encodertest extends OpMode {
         }   // SIGNIFICANT LAG
         */
 
+        /*
         if(e_motorController.getMotorControllerDeviceMode() == DcMotorController.DeviceMode.SWITCHING_TO_WRITE_MODE || e_motorController.getMotorControllerDeviceMode() == DcMotorController.DeviceMode.WRITE_ONLY){
             e_motor.setPower(gamepad1.left_stick_y);
             e_motorController.setMotorControllerDeviceMode(DcMotorController.DeviceMode.READ_ONLY);
@@ -125,6 +153,8 @@ public class encodertest extends OpMode {
                 e.printStackTrace();
             }
         }
+        */
+
         // THIS DOESN'T WORK YET, BUT I THINK IT HAS POTENTIALS, WE JUST HAVE TO MAKE SURE THAT THE ENCODER VALUE STAYS THERE AFTER IT'S SWITCHED TO WRITE MODE
         // SO FAR IT ONLY SHOWS UP SPORADICALLY WHEN THE THING IS IN READ/SWITCHING TO READ MODES
 
@@ -134,8 +164,6 @@ public class encodertest extends OpMode {
         while (e_motorController.getMotorControllerDeviceMode() != DcMotorController.DeviceMode.WRITE_ONLY);
         // DOES NOT WORK
         */
-
-        telemetry.addData("mctrlstatus", e_motorController.getMotorControllerDeviceMode());
 
     }
 
@@ -155,5 +183,13 @@ public class encodertest extends OpMode {
         }
 
         return l_return;
+    }
+
+    private boolean allowedToWrite(){
+        return (devMode == DcMotorController.DeviceMode.WRITE_ONLY);
+    }
+
+    private boolean allowedToRead(){
+        return (devMode == DcMotorController.DeviceMode.READ_ONLY);
     }
 }
