@@ -12,6 +12,7 @@ public class drivetest extends OpModeCamera {
     DcMotor right2;
     DcMotor left1;
     DcMotor left2;
+    double modifier=1.0;
 
     /*
      * Code to run when the op mode is first enabled goes here
@@ -35,10 +36,19 @@ public class drivetest extends OpModeCamera {
 
     @Override
     public void loop() {
-    left1.setPower(gamepad1.left_stick_y);
+        if (gamepad1.a)
+        {modifier=1.0;}
+        if (gamepad1.b)
+        {modifier=0.75;}
+        if (gamepad1.x)
+        {modifier=0.50;}
+        if (gamepad1.y)
+        {modifier=0.25;}
+    left1.setPower(gamepad1.left_stick_y*modifier);
     left2.setPower(gamepad1.left_stick_y);
     right1.setPower(gamepad1.right_stick_y);
     right2.setPower(gamepad1.right_stick_y);
+        telemetry.addData("Modifier: ", modifier);
 
     }
 
