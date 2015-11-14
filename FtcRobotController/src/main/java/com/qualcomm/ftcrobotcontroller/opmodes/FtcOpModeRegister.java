@@ -72,7 +72,7 @@ public class FtcOpModeRegister implements OpModeRegister {
 
     manager.register("DetectColor", DetectColor.class);
     manager.register("Encoder Test w/ imported class", TestHiTechnicMotorControllerOpMode.class);
-    manager.register("encoder auto test", encoderautotest.class);
+    manager.register("drive test", drivetest.class);
     //manager.register("LinearDetectColor", LinearDetectColor.class);
 
     /*
