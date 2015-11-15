@@ -41,13 +41,13 @@ public class drivetest extends OpModeCamera {
         if (gamepad1.b)
         {modifier=0.75;}
         if (gamepad1.x)
-        {modifier=0.50;}
-        if (gamepad1.y)
         {modifier=0.25;}
+        if (gamepad1.y)
+        {modifier=0.50;}
     left1.setPower(gamepad1.left_stick_y*modifier);
-    left2.setPower(gamepad1.left_stick_y);
-    right1.setPower(gamepad1.right_stick_y);
-    right2.setPower(gamepad1.right_stick_y);
+    left2.setPower(gamepad1.left_stick_y*modifier);
+    right1.setPower(gamepad1.right_stick_y*modifier);
+    right2.setPower(gamepad1.right_stick_y*modifier);
         telemetry.addData("Modifier: ", modifier);
 
     }

@@ -9,9 +9,7 @@ import android.hardware.Camera;
 import android.util.Log;
 
 import com.qualcomm.ftcrobotcontroller.CameraPreview;
-import com.qualcomm.ftcrobotcontroller.FtcRobotControllerActivity;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
 import java.io.ByteArrayOutputStream;
 
@@ -164,9 +162,6 @@ public class LinearOpModeCamera extends LinearOpMode {
 
         data = parameters.flatten();
 
-        if (preview == null) {
-            ((FtcRobotControllerActivity) hardwareMap.appContext).initPreviewLinear(camera, this, previewCallback);
-        }
     }
 
     public void stopCameraInSecs(int duration) {
@@ -195,7 +190,6 @@ public class LinearOpModeCamera extends LinearOpMode {
     public void stopCamera() {
         if (camera != null) {
             if (preview != null) {
-                ((FtcRobotControllerActivity) hardwareMap.appContext).removePreviewLinear(this);
                 preview = null;
             }
             camera.stopPreview();

@@ -9,7 +9,6 @@ import android.hardware.Camera;
 import android.util.Log;
 
 import com.qualcomm.ftcrobotcontroller.CameraPreview;
-import com.qualcomm.ftcrobotcontroller.FtcRobotControllerActivity;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
 import java.io.ByteArrayOutputStream;
@@ -155,16 +154,11 @@ public class OpModeCamera extends OpMode {
         camera.setParameters(parameters);
 
         data = parameters.flatten();
-
-        if (preview == null) {
-            ((FtcRobotControllerActivity) hardwareMap.appContext).initPreview(camera, this, previewCallback);
-        }
     }
 
     public void stopCamera() {
         if (camera != null) {
             if (preview != null) {
-                ((FtcRobotControllerActivity) hardwareMap.appContext).removePreview(this);
                 preview = null;
             }
             camera.stopPreview();
