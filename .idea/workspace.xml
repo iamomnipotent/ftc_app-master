@@ -5,133 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7091d5d9-a632-4f10-a1d1-8f5f19800c30" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/resources/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/resources/resources-debug.ap_" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/resources/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Analytics-release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Analytics-release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Analytics-release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Analytics-release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Hardware-release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Hardware-release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Hardware-release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Hardware-release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/ModernRobotics-release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/ModernRobotics-release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/ModernRobotics-release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/ModernRobotics-release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/WirelessP2p-release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/WirelessP2p-release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/WirelessP2p-release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/WirelessP2p-release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/androidTest/debug/com/qualcomm/ftcrobotcontroller/test/BuildConfig.java" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/androidTest/debug/com/qualcomm/ftcrobotcontroller/test/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/buildConfig/debug/com/qualcomm/ftcrobotcontroller/BuildConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/FtcRobotController.iml" afterPath="$PROJECT_DIR$/FtcRobotController/FtcRobotController.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/WirelessP2p/R.java" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/WirelessP2p/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/analyticsmodule/R.java" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/analyticsmodule/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/ftccommon/R.java" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/ftccommon/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/hardware/R.java" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/hardware/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/modernrobotics/R.java" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/modernrobotics/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/robotcore/R.java" afterPath="$PROJECT_DIR$/FtcRobotController/build/generated/source/r/debug/com/qualcomm/robotcore/R.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Analytics-release/R.txt" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Analytics-release/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/R.txt" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Hardware-release/R.txt" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/Hardware-release/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/ModernRobotics-release/R.txt" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/ModernRobotics-release/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/R.txt" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/WirelessP2p-release/R.txt" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/WirelessP2p-release/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_about.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_about.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_about.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_about.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_autoconfigure.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_autoconfigure.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_autoconfigure.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_autoconfigure.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_config_wifi_direct.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_config_wifi_direct.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_config_wifi_direct.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_config_wifi_direct.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_ftc_configuration.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_ftc_configuration.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_ftc_configuration.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_ftc_configuration.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_ftc_controller.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_ftc_controller.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_ftc_wifi_channel_selector.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_ftc_wifi_channel_selector.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_ftc_wifi_channel_selector.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_ftc_wifi_channel_selector.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_load.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_load.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_load.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_load.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_view_logs.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/activity_view_logs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_view_logs.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/activity_view_logs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/analog_input_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/analog_input_device.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/analog_input_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/analog_input_device.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/analog_inputs.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/analog_inputs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/analog_inputs.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/analog_inputs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/analog_output_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/analog_output_device.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/analog_output_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/analog_output_device.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/analog_outputs.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/analog_outputs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/analog_outputs.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/analog_outputs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/autoRed.java" afterPath="$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/autoRed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/drawable/button_shape.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/drawable/button_shape.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/drawable-hdpi/button_shape.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/drawable-hdpi/button_shape.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/drawable/button_shape.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/drawable/button_shape.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/drawable-hdpi/button_shape.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/drawable-hdpi/button_shape.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/xml/device_filter.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/xml/device_filter.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/device_interface_module.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/device_interface_module.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/device_interface_module.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/device_interface_module.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/digital_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/digital_device.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/digital_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/digital_device.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/digital_devices.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/digital_devices.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/digital_devices.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/digital_devices.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/file_info.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/file_info.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/file_info.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/file_info.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/menu/ftc_robot_controller.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/menu/ftc_robot_controller.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/header.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/header.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/header.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/header.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/i2c_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/i2c_device.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/i2c_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/i2c_device.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/i2cs.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/i2cs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/i2cs.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/i2cs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/info_button.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/info_button.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/info_button.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/info_button.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/legacy.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/legacy.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/legacy.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/legacy.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/FtcRobotController/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/matrices.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/matrices.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/matrices.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/matrices.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/matrix_devices.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/matrix_devices.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/matrix_devices.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/matrix_devices.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/incremental/mergeResources/debug/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/motors.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/motors.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/motors.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/motors.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/orange_warning.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/orange_warning.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/orange_warning.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/orange_warning.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/xml/preferences.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/xml/preferences.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/xml/preferences.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/xml/preferences.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/pwm_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/pwm_device.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/pwm_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/pwm_device.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/pwms.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/pwms.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/pwms.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/pwms.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/servo.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/servo.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/servo.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/servo.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/servos.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/servos.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/servos.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/servos.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/shape.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/shape.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/shape.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/shape.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/simple_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/layout/simple_device.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/simple_device.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/layout/simple_device.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values-sw720dp-land/values-sw720dp-land.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values-sw720dp-land/values-sw720dp-land.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/values-v11/values-v11.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/values-v11/values-v11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/values-v11/values-v11.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/values-v11/values-v11.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values-v11/values-v11.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values-v11/values-v11.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/values-v14/values-v14.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/values-v14/values-v14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/values-v14/values-v14.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/values-v14/values-v14.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values-v14/values-v14.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values-v14/values-v14.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/values-w820dp/values-w820dp.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/values-w820dp/values-w820dp.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values-w820dp/values-w820dp.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values-w820dp/values-w820dp.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/values/values.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/res/values/values.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/values/values.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/res/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values/values.xml" afterPath="$PROJECT_DIR$/FtcRobotController/build/intermediates/res/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -175,7 +103,17 @@
         <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/PushBotAuto.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="212" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
+              <caret line="206" column="10" selection-start-line="206" selection-start-column="10" selection-end-line="206" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="K9AutoTime.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/K9AutoTime.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="125" column="43" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -185,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/drivetest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+              <caret line="49" column="53" selection-start-line="46" selection-start-column="4" selection-end-line="49" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -206,22 +144,13 @@
       <file leaf-file-name="autoRed.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/autoRed.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2895377">
-              <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.5123839">
+              <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
               <folding>
-                <element signature="e#2323#2324#0" expanded="true" />
-                <element signature="e#2377#2378#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2865#2866#0" expanded="true" />
+                <element signature="e#2919#2920#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SensorEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-19/android/hardware/SensorEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -243,23 +172,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1629#1630#0" expanded="false" />
-                <element signature="e#1662#1663#0" expanded="false" />
-                <element signature="e#1697#1698#0" expanded="false" />
-                <element signature="e#1730#1731#0" expanded="false" />
-                <element signature="e#3188#3189#0" expanded="false" />
-                <element signature="e#3231#3232#0" expanded="false" />
-                <element signature="e#3266#3267#0" expanded="false" />
-                <element signature="e#3308#3309#0" expanded="false" />
-                <element signature="e#3342#3343#0" expanded="false" />
-                <element signature="e#3377#3378#0" expanded="false" />
-                <element signature="e#3411#3412#0" expanded="false" />
-                <element signature="e#3475#3476#0" expanded="false" />
-                <element signature="e#5069#5070#0" expanded="false" />
-                <element signature="e#5105#5106#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1796,10 +1709,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="4" />
+    <option name="y" value="23" />
+    <option name="width" value="1217" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -1824,9 +1737,10 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1887,7 +1801,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1903,6 +1816,7 @@
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -1917,7 +1831,8 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
@@ -1947,7 +1862,8 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
@@ -2039,6 +1955,7 @@
     <configuration default="false" name="FtcRobotController" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="FtcRobotController" />
       <option name="ACTIVITY_CLASS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -2053,7 +1970,8 @@
       <option name="NETWORK_LATENCY" value="none" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
       <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
@@ -2104,37 +2022,37 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="4" y="23" width="1217" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32821077" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26015368" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32821077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32821077" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27404255" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26015368" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32821077" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2155,6 +2073,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/LinearOpModeCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/K9TankDrive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="126" column="46" selection-start-line="126" selection-start-column="46" selection-end-line="126" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/FtcOpModeRegister.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2194,8 +2128,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2323#2324#0" expanded="true" />
-            <element signature="e#2377#2378#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2865#2866#0" expanded="true" />
+            <element signature="e#2919#2920#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2214,23 +2149,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1629#1630#0" expanded="false" />
-            <element signature="e#1662#1663#0" expanded="false" />
-            <element signature="e#1697#1698#0" expanded="false" />
-            <element signature="e#1730#1731#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3231#3232#0" expanded="false" />
-            <element signature="e#3266#3267#0" expanded="false" />
-            <element signature="e#3308#3309#0" expanded="false" />
-            <element signature="e#3342#3343#0" expanded="false" />
-            <element signature="e#3377#3378#0" expanded="false" />
-            <element signature="e#3411#3412#0" expanded="false" />
-            <element signature="e#3475#3476#0" expanded="false" />
-            <element signature="e#5069#5070#0" expanded="false" />
-            <element signature="e#5105#5106#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2272,23 +2191,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1629#1630#0" expanded="false" />
-            <element signature="e#1662#1663#0" expanded="false" />
-            <element signature="e#1697#1698#0" expanded="false" />
-            <element signature="e#1730#1731#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3231#3232#0" expanded="false" />
-            <element signature="e#3266#3267#0" expanded="false" />
-            <element signature="e#3308#3309#0" expanded="false" />
-            <element signature="e#3342#3343#0" expanded="false" />
-            <element signature="e#3377#3378#0" expanded="false" />
-            <element signature="e#3411#3412#0" expanded="false" />
-            <element signature="e#3475#3476#0" expanded="false" />
-            <element signature="e#5069#5070#0" expanded="false" />
-            <element signature="e#5105#5106#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2330,23 +2233,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1629#1630#0" expanded="false" />
-            <element signature="e#1662#1663#0" expanded="false" />
-            <element signature="e#1697#1698#0" expanded="false" />
-            <element signature="e#1730#1731#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3231#3232#0" expanded="false" />
-            <element signature="e#3266#3267#0" expanded="false" />
-            <element signature="e#3308#3309#0" expanded="false" />
-            <element signature="e#3342#3343#0" expanded="false" />
-            <element signature="e#3377#3378#0" expanded="false" />
-            <element signature="e#3411#3412#0" expanded="false" />
-            <element signature="e#3475#3476#0" expanded="false" />
-            <element signature="e#5069#5070#0" expanded="false" />
-            <element signature="e#5105#5106#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2519,57 +2406,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="191" column="34" selection-start-line="191" selection-start-column="34" selection-end-line="191" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1629#1630#0" expanded="false" />
-            <element signature="e#1662#1663#0" expanded="false" />
-            <element signature="e#1697#1698#0" expanded="false" />
-            <element signature="e#1730#1731#0" expanded="false" />
-            <element signature="e#3188#3189#0" expanded="false" />
-            <element signature="e#3231#3232#0" expanded="false" />
-            <element signature="e#3266#3267#0" expanded="false" />
-            <element signature="e#3308#3309#0" expanded="false" />
-            <element signature="e#3342#3343#0" expanded="false" />
-            <element signature="e#3377#3378#0" expanded="false" />
-            <element signature="e#3411#3412#0" expanded="false" />
-            <element signature="e#3475#3476#0" expanded="false" />
-            <element signature="e#5069#5070#0" expanded="false" />
-            <element signature="e#5105#5106#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/PushBotAuto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="212" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/drivetest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-19/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08640406">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/ethansop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2589,14 +2426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-19/android/hardware/SensorEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="13" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/OpModeCamera.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2607,13 +2436,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/PushBotAuto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="206" column="10" selection-start-line="206" selection-start-column="10" selection-end-line="206" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/K9AutoTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="125" column="43" selection-start-line="125" selection-start-column="43" selection-end-line="125" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/drivetest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="53" selection-start-line="46" selection-start-column="4" selection-end-line="49" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/ethansop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FtcRobotController/src/main/java/com/qualcomm/ftcrobotcontroller/opmodes/autoRed.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2895377">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.5123839">
+          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
           <folding>
-            <element signature="e#2323#2324#0" expanded="true" />
-            <element signature="e#2377#2378#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2865#2866#0" expanded="true" />
+            <element signature="e#2919#2920#0" expanded="true" />
           </folding>
         </state>
       </provider>
