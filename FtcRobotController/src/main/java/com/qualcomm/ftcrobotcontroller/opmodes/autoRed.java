@@ -1,24 +1,12 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import com.qualcomm.ftcrobotcontroller.R;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorController;
-import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.hardware.ServoController;
-import com.qualcomm.robotcore.hardware.UltrasonicSensor;
-import com.qualcomm.robotcore.util.Range;
-
 import android.app.Activity;
-import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Bundle;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import com.qualcomm.robotcore.hardware.DcMotor;
 
 public class autoRed extends OpModeCamera
 {
@@ -39,32 +27,64 @@ public class autoRed extends OpModeCamera
     DcMotor leftBack;
     DcMotor rightFront;
     DcMotor rightBack;
+    double rfpower;
+    double rbpower;
+    double lfpower;
+    double lbpower;
 
     float heading;
 
     @Override
     public void init (){
-        eSensorManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
-        eAccelerometer = eSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        eMagnetometer = eSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        leftFront = hardwareMap.dcMotor.get("leftFront");
+        leftBack = hardwareMap.dcMotor.get("leftBack");
+        rightFront = hardwareMap.dcMotor.get("rightFront");
+        rightBack = hardwareMap.dcMotor.get("rightBack");
+
+        leftFront.setDirection(DcMotor.Direction.REVERSE);
+        leftBack.setDirection(DcMotor.Direction.REVERSE);
+        //eSensorManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+        //eAccelerometer = eSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        //eMagnetometer = eSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     }
 
     @Override
     public void init_loop (){
-        eSensorManager.registerListener(eSensorEventListener,eAccelerometer,SensorManager.SENSOR_DELAY_GAME);
-        eSensorManager.registerListener(eSensorEventListener,eMagnetometer,SensorManager.SENSOR_DELAY_GAME);
+        //eSensorManager.registerListener(eSensorEventListener,eAccelerometer,SensorManager.SENSOR_DELAY_GAME);
+        //eSensorManager.registerListener(eSensorEventListener,eMagnetometer,SensorManager.SENSOR_DELAY_GAME);
     }
 
     @Override
     public void loop () {
-        if(event.sensor == eAccelerometer) {
+        //DRIVE FORWARD
+        if(this.time <= 4) //do for the first 4 seconds
+        {
+        lfpower = 0.75;
+        lbpower = 0.75;
+        rfpower = 0.75;
+        rbpower = 0.75;
+        }
+        else if(this.time <=5) { //4-5 seconds
+        }
+        //TURN 90 DEGREES COUNTERCLOCKWISE
+        else if(this.time <=8) {//5-8 seconds
+            lfpower = -0.5;
+            lbpower = -0.5;
+            rfpower = 0.5;
+            rbpower = 0.5;
+        }
+        leftFront.setPower(lfpower);
+        leftBack.setPower(lbpower);
+        rightFront.setPower(rfpower);
+        rightBack.setPower(rbpower);
+        /*if(event.sensor == eAccelerometer) {
             telemetry.addData("accelerometer values", event.values);
             lastAccelerometerSet = true;
         }
         if(event.sensor == eMagnetometer) {
             telemetry.addData("magnetometor values", event.values);
             lastMagnetometerSet = true;
-        }
+        }*/
     }
 
     @Override

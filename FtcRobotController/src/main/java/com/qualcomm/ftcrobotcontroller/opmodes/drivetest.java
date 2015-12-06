@@ -8,10 +8,8 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class drivetest extends OpModeCamera {
 
 
-    DcMotor right1;
-    DcMotor right2;
-    DcMotor left1;
-    DcMotor left2;
+    DcMotor motor1;
+    DcMotor motor2;
     double modifier=1.0;
 
     /*
@@ -20,12 +18,9 @@ public class drivetest extends OpModeCamera {
      */
     @Override
     public void init() {
-    right1 = hardwareMap.dcMotor.get("right1");
-    right2 = hardwareMap.dcMotor.get("right2");
-    left1 = hardwareMap.dcMotor.get("left1");
-    left2 = hardwareMap.dcMotor.get("left2");
-    left1.setDirection(DcMotor.Direction.REVERSE);
-    left2.setDirection(DcMotor.Direction.REVERSE);
+    motor1 = hardwareMap.dcMotor.get("motor1");
+    motor2 = hardwareMap.dcMotor.get("motor2");
+    motor1.setDirection(DcMotor.Direction.REVERSE);
 
     }
 
@@ -44,10 +39,8 @@ public class drivetest extends OpModeCamera {
         {modifier=0.25;}
         if (gamepad1.y)
         {modifier=0.50;}
-    left1.setPower(gamepad1.left_stick_y*modifier);
-    left2.setPower(gamepad1.left_stick_y*modifier);
-    right1.setPower(gamepad1.right_stick_y*modifier);
-    right2.setPower(gamepad1.right_stick_y*modifier);
+    motor1.setPower(gamepad1.left_stick_y*modifier);
+    motor2.setPower(gamepad1.right_stick_y*modifier);
         telemetry.addData("Modifier: ", modifier);
 
     }
