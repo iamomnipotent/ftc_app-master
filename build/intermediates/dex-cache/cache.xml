@@ -2,46 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/exploded-aar/FtcCommon-release/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="6da7d9bc8c9a82321450b6b4273d1746b6cade21">
-        <dex dex="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/pre-dexed/debug/classes-257502ffc7d998f8002fbe4d1c738a412cf0452c.jar" />
-    </item>
-    <item
-        jar="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/exploded-aar/Analytics-release/jars/classes.jar"
+        jar="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\Analytics-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="23c74caa2b901107adc4d0aec343c5b8e8be86fb">
-        <dex dex="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/pre-dexed/debug/classes-2430dcafc78b00a618323d02606d403ce2af9ec2.jar" />
+        <dex dex="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-ff008489b3a9d82702ac0c7aaee7ccbb37c3e0bd.jar" />
     </item>
     <item
-        jar="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/exploded-aar/ModernRobotics-release/jars/classes.jar"
+        jar="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\FtcCommon-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6da7d9bc8c9a82321450b6b4273d1746b6cade21">
+        <dex dex="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-453e393af74df27aae6c12c5425dc250fd5d1a90.jar" />
+    </item>
+    <item
+        jar="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\ModernRobotics-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="ad4adcdf8eb6ff2b3b4fe9f1d676f099db621d60">
-        <dex dex="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/pre-dexed/debug/classes-e800b533742cde63b6893a3975c8b9a37e3df724.jar" />
+        <dex dex="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-aceea6889db2205395b26ec006ce41a6351e39bc.jar" />
     </item>
     <item
-        jar="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/exploded-aar/RobotCore-release/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2ec6f06847bccfe30fb8f8f75ce888721e4fd275">
-        <dex dex="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/pre-dexed/debug/classes-4fe802f3fcb8b647341917e8273255c0adb78081.jar" />
-    </item>
-    <item
-        jar="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/exploded-aar/WirelessP2p-release/jars/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="ebf8372b5bc9dc9f596ed438df36481099d51c41">
-        <dex dex="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/pre-dexed/debug/classes-b3a00c0c5ab4869314130c3b1d7853ee1b88fd4a.jar" />
-    </item>
-    <item
-        jar="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/exploded-aar/Hardware-release/jars/classes.jar"
+        jar="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\Hardware-release\jars\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="55ecd0b0517650a2cffd06137a40de8af3bbbde3">
-        <dex dex="/Users/Ooami/Documents/ftc_app-master/FtcRobotController/build/intermediates/pre-dexed/debug/classes-ad25e88132d0341570623a7efe2fd3aa3a47d4dc.jar" />
+        <dex dex="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-b9b9a5c2ee47c5e38493665477e9ac0a3c935d1d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\WirelessP2p-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ebf8372b5bc9dc9f596ed438df36481099d51c41">
+        <dex dex="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-860f652b19b35dc4373dcca604c2f1d9c9eea23a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\exploded-aar\RobotCore-release\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2ec6f06847bccfe30fb8f8f75ce888721e4fd275">
+        <dex dex="C:\Users\Zifan\Documents\ftc_app-master\FtcRobotController\build\intermediates\pre-dexed\debug\classes-8e59a75a3b446ce66c74d1797e79284eac731767.jar" />
     </item>
 
 </items>

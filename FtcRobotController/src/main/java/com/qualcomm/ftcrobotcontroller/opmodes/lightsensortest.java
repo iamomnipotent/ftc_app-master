@@ -31,7 +31,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import android.graphics.Color;
+
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.ColorSensor;
+import com.qualcomm.robotcore.hardware.LightSensor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 import java.text.SimpleDateFormat;
@@ -42,28 +47,52 @@ import java.util.Date;
  * <p>
  *Enables control of the robot via the gamepad
  */
-public class NullOp extends OpMode {
+public class lightsensortest extends OpMode {
 
+    LightSensor leftLight;
+    LightSensor rightLight;
+    
+    ColorSensor color;
 
-  @Override
-  public void init() {
-  }
+    double leftVal, rightVal, leftRaw, rightRaw;
 
-  /*
-     * Code to run when the op mode is first enabled goes here
-     * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
-     */
-  @Override
-  public void init_loop() {
+    @Override
+    public void init() {
+        leftLight = hardwareMap.lightSensor.get("leftLight");
+        rightLight = hardwareMap.lightSensor.get("rightLight");
+        color = hardwareMap.colorSensor.get("color");
+    }
+    
+    public void loop() {
+        leftVal = leftLight.getLightDetected();
+        leftRaw = leftLight.getLightDetectedRaw();
+        rightVal = rightLight.getLightDetected();
+        rightRaw = rightLight.getLightDetectedRaw();
 
-  }
+        float hsvValues1[] = {0,0,0};
+        Color.RGBToHSV(color.red(), color.green(), color.blue(), hsvValues1);
 
-  /*
-   * This method will be called repeatedly in a loop
-   * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#loop()
-   */
-  @Override
-  public void loop() {
+        telemetry.addData("red", color.red());
+        telemetry.addData("green", color.green());
+        telemetry.addData("blue", color.blue());
 
-  }
+        if (gamepad1.a) {
+            leftLight.enableLed(false);
+            rightLight.enableLed(false);
+        } else {
+            leftLight.enableLed(true);
+            rightLight.enableLed(true);
+        }
+
+        if (gamepad1.b) {
+            color.enableLed(false);
+        } else {
+            color.enableLed(true);
+        }
+
+        telemetry.addData("left val", leftVal);
+        telemetry.addData("right val", rightVal);
+        telemetry.addData("left raw", leftRaw);
+        telemetry.addData("right raw", rightRaw);
+    }
 }

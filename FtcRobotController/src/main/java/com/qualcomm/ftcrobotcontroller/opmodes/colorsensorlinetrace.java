@@ -34,36 +34,54 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import android.app.Activity;
+import android.graphics.Color;
+import android.view.View;
+
+import com.qualcomm.ftcrobotcontroller.R;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import com.qualcomm.robotcore.hardware.ColorSensor;
+import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
+import com.qualcomm.robotcore.hardware.LED;
+import com.qualcomm.robotcore.hardware.TouchSensor;
 
 /**
  * TeleOp Mode
  * <p>
  *Enables control of the robot via the gamepad
  */
-public class NullOp extends OpMode {
+public class colorsensorlinetrace extends OpMode {
 
+    public ColorSensor mainColor;
 
-  @Override
-  public void init() {
-  }
+    @Override
+    public void init() {
+        mainColor = hardwareMap.colorSensor.get("mainColor");
+    }
 
-  /*
-     * Code to run when the op mode is first enabled goes here
-     * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
+    /*
+       * Code to run when the op mode is first enabled goes here
+       * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#start()
+       */
+    @Override
+    public void init_loop() {
+
+    }
+
+    /*
+     * This method will be called repeatedly in a loop
+     * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#loop()
      */
-  @Override
-  public void init_loop() {
-
-  }
-
-  /*
-   * This method will be called repeatedly in a loop
-   * @see com.qualcomm.robotcore.eventloop.opmode.OpMode#loop()
-   */
-  @Override
-  public void loop() {
-
-  }
+    @Override
+    public void loop() {
+        mainColor.enableLed(true);
+        float hsvValues[] = {0,0,0};
+        final float values[] = hsvValues;
+        Color.RGBToHSV(mainColor.red(), mainColor.green(), mainColor.blue(), hsvValues);
+        telemetry.addData("color sensor red", mainColor.red());
+        telemetry.addData("color sensor blue", mainColor.blue());
+        telemetry.addData("color sensor green", mainColor.green());
+        telemetry.addData("Hue", hsvValues[0]);
+    }
 }

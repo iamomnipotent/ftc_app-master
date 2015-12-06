@@ -54,15 +54,15 @@ public class FtcOpModeRegister implements OpModeRegister {
      *
      * If two or more op modes are registered with the same name, the app will display an error.
      */
-    manager.register("Kevin's Test Op", kevinsop.class);
-    manager.register("Ethan's Test Op", ethansop.class);
+    // manager.register("Kevin's Test Op", kevinsop.class);
+    // manager.register("Ethan's Test Op", ethansop.class);
     //manager.register("Frank Servo Test Op", frankservo.class);
     manager.register("Encoder Test (constantly updated)", encodertest.class);
     manager.register("Encoder w/ Two Motor Controllers Test", encodertest2MC.class);
-    manager.register("Encoder Test (a button updated)", encodertest1.class);
+    // manager.register("Encoder Test (a button updated)", encodertest1.class);
 
     //manager.register("NullOp", NullOp.class);
-    manager.register("test auto", testauto.class);
+    // manager.register("test auto", testauto.class);
     //manager.register("MatrixK9TeleOp", MatrixK9TeleOp.class);
     //manager.register("K9TeleOp", K9TeleOp.class);
     //manager.register ("PushBotAuto", PushBotAuto.class);
@@ -73,6 +73,12 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register("DetectColor", DetectColor.class);
     manager.register("Encoder Test w/ imported class", TestHiTechnicMotorControllerOpMode.class);
     manager.register("drive test w/ modifiers", drivetest.class);
+
+    manager.register("not updating?????", notupdatingvalues.class);
+
+    manager.register("color sensor test", colorsensorlinetrace.class);
+    manager.register("color sensor line trace test with servo", autoline.class);
+    manager.register("light sensor test", lightsensortest.class);
     //manager.register("LinearDetectColor", LinearDetectColor.class);
 
     /*
