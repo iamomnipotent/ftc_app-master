@@ -46,6 +46,8 @@ public class FtcOpModeRegister implements OpModeRegister {
    * @param manager op mode manager
    */
   public void register(OpModeManager manager) {
+    manager.register("FINAL TANK", drivetest.class);
+    manager.register("AUTO LINE", AUTOlightandcolor.class);
 
     /*
      * register your op modes here.
@@ -72,12 +74,11 @@ public class FtcOpModeRegister implements OpModeRegister {
 
     manager.register("DetectColor", DetectColor.class);
     manager.register("Encoder Test w/ imported class", TestHiTechnicMotorControllerOpMode.class);
-    manager.register("drive test w/ modifiers", drivetest.class);
 
     manager.register("not updating?????", notupdatingvalues.class);
 
     manager.register("color sensor test", colorsensorlinetrace.class);
-    manager.register("color sensor line trace test with servo", autoline.class);
+    manager.register("climber test", autoline.class);
     manager.register("light sensor test", lightsensortest.class);
     //manager.register("LinearDetectColor", LinearDetectColor.class);
 

@@ -41,6 +41,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * TeleOp Mode
@@ -54,6 +55,9 @@ public class notupdatingvalues extends OpMode {
 
     public Boolean leftWhite;
     public Boolean rightWhite;
+    public Boolean enRoute;
+    public Boolean waitLeft;
+    public Boolean waitRight;
 
     public double leftVal, rightVal;
 
@@ -72,6 +76,10 @@ public class notupdatingvalues extends OpMode {
 
         leftMotor.setDirection(DcMotor.Direction.REVERSE);
         // rightMotor.setDirection(DcMotor.Direction.REVERSE);
+
+        enRoute = true;
+        waitLeft = true;
+        waitRight = true;
     }
 
     /*
@@ -94,7 +102,7 @@ public class notupdatingvalues extends OpMode {
 
         if (leftVal < 0.25) {
             leftWhite = true;
-        } else if (leftVal > 0.25) {
+        } else if (leftVal >= 0.25) {
             leftWhite = false;
         }
 
@@ -105,22 +113,49 @@ public class notupdatingvalues extends OpMode {
         }
 
         if (!leftWhite && !rightWhite) {
-            leftMotor.setPower(0.13);
-            rightMotor.setPower(0.13);
+            leftMotor.setPower(0.09);
+            rightMotor.setPower(0.09);
         } else if (!leftWhite && rightWhite) {
-            leftMotor.setPower(0.9);
-            rightMotor.setPower(-0.2);
+            if (enRoute == true) {
+                leftMotor.setPower(0.09);
+                rightMotor.setPower(0.09);
+            } else {
+                if (waitRight == true) {
+                    try {
+                        TimeUnit.MILLISECONDS.sleep(100);
+                    } catch (InterruptedException e) {
+                        telemetry.addData("error", "error");
+                    }
+                    waitRight = false;
+                } else {
+                    leftMotor.setPower(0.4);
+                    rightMotor.setPower(-0.7);
+                }
+            }
         } else if (leftWhite && !rightWhite) {
-            leftMotor.setPower(-0.2);
-            rightMotor.setPower(0.9);
+            enRoute = false;
+            leftMotor.setPower(0.0);
+            rightMotor.setPower(0.0);
+            if (waitLeft == true) {
+                try {
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException e) {
+                    telemetry.addData("error", "error");
+                }
+                waitLeft = false;
+            } else {
+                leftMotor.setPower(-1.0);
+                rightMotor.setPower(0.3);
+            }
         } else if (leftWhite && rightWhite) {
-            leftMotor.setPower(0.13);
-            rightMotor.setPower(0.13);
+            leftMotor.setPower(0.09);
+            rightMotor.setPower(0.09);
         }
 
         telemetry.addData("lw?", leftWhite);
         telemetry.addData("rw?", rightWhite);
         telemetry.addData("ll", leftLight.getLightDetected());
         telemetry.addData("rl", rightLight.getLightDetected());
+        telemetry.addData("enroute?", enRoute);
     }
 }

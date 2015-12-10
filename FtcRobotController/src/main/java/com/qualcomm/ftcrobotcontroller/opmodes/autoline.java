@@ -80,8 +80,8 @@ public class autoline extends OpMode {
     @Override
     public void init() {
         // leftColor = hardwareMap.colorSensor.get("leftColor");
-        leftLight = hardwareMap.lightSensor.get("leftLight");
-        rightLight = hardwareMap.lightSensor.get("rightLight");
+        // leftLight = hardwareMap.lightSensor.get("leftLight");
+        // rightLight = hardwareMap.lightSensor.get("rightLight");
 
         /*
         rightColor = hardwareMap.colorSensor.get("rightColor");
@@ -89,9 +89,9 @@ public class autoline extends OpMode {
         left = hardwareMap.dcMotor.get("left");
         right = hardwareMap.dcMotor.get("right");
 
+        */
 
         mainServo = hardwareMap.servo.get("mainServo");
-        */
 
         servoDelta = 0.005;
         // isWhite = false;
@@ -137,7 +137,10 @@ public class autoline extends OpMode {
 
         setServoPos = Range.clip(setServoPos, MIN_ESERVO_POS, MAX_ESERVO_POS);
 
-        // mainServo.setPosition(setServoPos);
+        mainServo.setPosition(setServoPos);
+
+        /*
+
         // TEST SERVO CODE END
 
         // COLOR SENSOR CODE START
@@ -148,6 +151,7 @@ public class autoline extends OpMode {
 
         float hsvValues1[] = {0,0,0};
         // Color.RGBToHSV(leftColor.red(), leftColor.green(), leftColor.blue(), hsvValues1);
+        */
 
         /*
         float hsvValues2[] = {0,0,0};
@@ -200,10 +204,11 @@ public class autoline extends OpMode {
         telemetry.addData("color sensor green", leftColor.green());
         telemetry.addData("Hue", hsvValues1[0]);
         telemetry.addData("left white?", leftWhite);
-        */
+
 
         telemetry.addData("left light value", leftLight.getLightDetectedRaw());
         telemetry.addData("right light value", rightLight.getLightDetectedRaw());
         // COLOR SENSOR CODE END
+        */
     }
 }
