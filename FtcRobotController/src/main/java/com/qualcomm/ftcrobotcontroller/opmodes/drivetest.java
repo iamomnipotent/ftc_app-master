@@ -34,8 +34,9 @@ public class drivetest extends OpModeCamera {
         leftMotor = hardwareMap.dcMotor.get("leftMotor");
         rightMotor = hardwareMap.dcMotor.get("rightMotor");
         intakeTurntable = hardwareMap.dcMotor.get("turntable");
-        intakeVertical = hardwareMap.dcMotor.get("Vertical");
+        intakeVertical = hardwareMap.dcMotor.get("vertical");
         intakeBelt = hardwareMap.dcMotor.get("belt");
+
     }
 
     /*
@@ -45,7 +46,11 @@ public class drivetest extends OpModeCamera {
 
     @Override
     public void loop() {
-        if (prevLeftButton==false && gamepad1.left_stick_button==true) {
+        int dpadleft=0;
+        int dpadright=0;
+        int dpaddown=0;
+        int dpadup=0;
+        /*if (prevLeftButton==false && gamepad1.left_stick_button==true) {
             leftCount++;
             leftCount = leftCount % 2;
         }
@@ -71,57 +76,46 @@ public class drivetest extends OpModeCamera {
         } else {
             rightMotor.setDirection(DcMotor.Direction.REVERSE);
             rightBooleanState = "reverse";
-        }
+        }*/
 
-        if (gamepad1.a)
+        if (gamepad2.a)
         {modifier=1.0;}
-        if (gamepad1.b)
+        if (gamepad2.b)
         {modifier=0.75;}
-        if (gamepad1.x)
+        if (gamepad2.x)
         {modifier=0.25;}
-        if (gamepad1.y)
+        if (gamepad2.y)
         {modifier=0.50;}
 
-        leftMotor.setPower(gamepad1.left_stick_y*modifier);
-        rightMotor.setPower(gamepad1.right_stick_y*modifier);
-
-        telemetry.addData("Modifier: ", modifier);
         
         if (gamepad1.dpad_left)
-        {intakeTurntable.setPower(1.0);}
+        {intakeTurntable.setPower(0.25);}
         else if (!gamepad1.dpad_right) {intakeTurntable.setPower(0.0);}
 
         if (gamepad1.dpad_right)
-        {intakeTurntable.setPower(-1.0);}
-        else if (!gamepad1.dpad_right){intakeTurntable.setPower(0.0);}
+        {intakeTurntable.setPower(-0.25);}
+        else if (!gamepad1.dpad_left){intakeTurntable.setPower(0.0);}
 
         if (gamepad1.dpad_up)
-        {intakeVertical.setPower(1.0);}
-        else if (!gamepad1.dpad_up) {intakeVertical.setPower(0.0);}
-
-        if (gamepad1.dpad_down)
         {intakeVertical.setPower(-1.0);}
         else if (!gamepad1.dpad_down) {intakeVertical.setPower(0.0);}
 
+        if (gamepad1.dpad_down)
+        {intakeVertical.setPower(1.0);}
+        else if (!gamepad1.dpad_up) {intakeVertical.setPower(0.0);}
+
         if (gamepad1.left_bumper)
-        {intakeBelt.setPower(1.0);}
-        else if (!gamepad1.left_bumper){intakeBelt.setPower(0.0);}
+        {intakeBelt.setPower(-1.0);}
+        else if (!gamepad1.right_bumper){intakeBelt.setPower(0.0);}
 
         if (gamepad1.right_bumper)
-        {intakeBelt.setPower(-1.0);}
-        else if (!gamepad1.right_bumper) {intakeBelt.setPower(0.0);}
+        {intakeBelt.setPower(1.0);}
+        else if (!gamepad1.left_bumper) {intakeBelt.setPower(0.0);}
         
-        if (gamepad1.a)
-        {modifier=1.0;}
-        if (gamepad1.b)
-        {modifier=0.75;}
-        if (gamepad1.x)
-        {modifier=0.25;}
-        if (gamepad1.y)
-        {modifier=0.50;}
 
-        leftMotor.setPower(gamepad1.left_stick_y*modifier);
-        rightMotor.setPower(gamepad1.right_stick_y*modifier);
+
+        leftMotor.setPower(gamepad2.left_stick_y*-1*modifier);
+        rightMotor.setPower(gamepad2.right_stick_y*modifier);
 
         telemetry.addData("Modifier: ", modifier);
     }
