@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 // TANK DRIVE FOR FINAL THINGY
 
 public class drivetest extends OpModeCamera {
-
+    
     DcMotor leftMotor;
     DcMotor rightMotor;
     double modifier=1.0;
@@ -14,16 +14,19 @@ public class drivetest extends OpModeCamera {
     DcMotor intakeVertical;
     DcMotor intakeBelt;
 
-    Boolean leftButton = false;
-    Boolean prevLeftButton = false;
-    int leftCount=0;
-    
+    // Boolean arcadeButton = false;
+    Boolean prevArcadeButton = false;
+    int arcadeCount=0;
+    int arcadeEnabled;
+
+    /*
     Boolean rightButton = false;
     Boolean prevRightButton = false;
     int rightCount = 0;
     
     String leftBooleanState;
     String rightBooleanState;
+    */
 
     /*
      * Code to run when the op mode is first enabled goes here
@@ -46,37 +49,31 @@ public class drivetest extends OpModeCamera {
 
     @Override
     public void loop() {
+        
+        /*
         int dpadleft=0;
         int dpadright=0;
         int dpaddown=0;
         int dpadup=0;
-        /*if (prevLeftButton==false && gamepad1.left_stick_button==true) {
-            leftCount++;
-            leftCount = leftCount % 2;
-        }
-        prevLeftButton = gamepad1.left_stick_button;
+        */
 
-        if (leftCount == 0) {
-            leftMotor.setDirection(DcMotor.Direction.FORWARD);
-            leftBooleanState = "forward";
-        } else {
-            leftMotor.setDirection(DcMotor.Direction.REVERSE);
-            leftBooleanState = "reverse";
+        /*
+        if (prevArcadeButton==false && gamepad2.left_stick_button==true) {
+            arcadeCount++;
+            arcadeEnabled = arcadeCount % 2;
         }
-        
-        if (prevRightButton==false && gamepad1.right_stick_button==true) {
-            rightCount++;
-            rightCount = rightCount % 2;
-        }
-        prevRightButton = gamepad1.right_stick_button;
-        
-        if (rightCount == 0) {
-            rightMotor.setDirection(DcMotor.Direction.FORWARD);
-            rightBooleanState = "forward";
+        prevArcadeButton = gamepad2.left_stick_button;
+        */
+
+        if (gamepad2.right_bumper || gamepad2.left_bumper || (gamepad2.left_bumper && gamepad2.right_bumper)) {
+            leftMotor.setPower(gamepad2.left_stick_y*-1);
+            rightMotor.setPower(gamepad2.left_stick_y);
+            telemetry.addData("arcade?", "YES");
         } else {
-            rightMotor.setDirection(DcMotor.Direction.REVERSE);
-            rightBooleanState = "reverse";
-        }*/
+            leftMotor.setPower(gamepad2.left_stick_y*-1*modifier);
+            rightMotor.setPower(gamepad2.right_stick_y*modifier);
+            telemetry.addData("arcade?", "NO");
+        }
 
         if (gamepad2.a)
         {modifier=1.0;}
@@ -104,20 +101,16 @@ public class drivetest extends OpModeCamera {
         {intakeVertical.setPower(1.0);}
         else if (!gamepad1.dpad_up) {intakeVertical.setPower(0.0);}
 
-        if (gamepad1.left_bumper)
-        {intakeBelt.setPower(-1.0);}
+        if (gamepad1.left_bumper) //output
+        {intakeBelt.setPower(-0.75);}
         else if (!gamepad1.right_bumper){intakeBelt.setPower(0.0);}
 
-        if (gamepad1.right_bumper)
+        if (gamepad1.right_bumper) //input
         {intakeBelt.setPower(1.0);}
         else if (!gamepad1.left_bumper) {intakeBelt.setPower(0.0);}
-        
-
-
-        leftMotor.setPower(gamepad2.left_stick_y*-1*modifier);
-        rightMotor.setPower(gamepad2.right_stick_y*modifier);
 
         telemetry.addData("Modifier: ", modifier);
+
     }
 
     @Override
