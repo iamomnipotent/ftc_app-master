@@ -1,15 +1,9 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import android.graphics.Color;
-
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.LightSensor;
-import com.qualcomm.robotcore.util.ElapsedTime;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class AUTOlightandcolor extends OpMode {
@@ -76,16 +70,12 @@ public class AUTOlightandcolor extends OpMode {
             backWhite = false;
         }
 
-        if (!frontWhite && !backWhite) {
+        if (enRoute && !backWhite) {
             leftMotor.setPower(1.0);
             rightMotor.setPower(1.0);
         }
 
-        if (enRoute == true && frontWhite) {
-            leftMotor.setPower(1.0);
-            rightMotor.setPower(1.0);
-            enRoute = false;
-        } else if (enRoute == false && backWhite) {
+        if (enRoute && backWhite) {
             leftMotor.setPower(0.0);
             rightMotor.setPower(0.0);
             try {
@@ -93,15 +83,22 @@ public class AUTOlightandcolor extends OpMode {
             } catch (InterruptedException e) {
                 telemetry.addData("error", "error");
             }
-            if (!frontWhite) {
-                leftMotor.setPower(-0.5);
-                rightMotor.setPower(0.5);
-            } else if (frontWhite) {
-                leftMotor.setPower(0.0);
-                rightMotor.setPower(0.0);
+            leftMotor.setPower(-0.5);
+            rightMotor.setPower(0.5);
+            enRoute = false;
+        } else if (!enRoute && backWhite && frontWhite) {
+            leftMotor.setPower(0.0);
+            rightMotor.setPower(0.0);
+            try {
+                TimeUnit.MILLISECONDS.sleep(100);
+            } catch (InterruptedException e) {
+                telemetry.addData("error", "error");
             }
+            leftMotor.setPower(1.0);
+            rightMotor.setPower(1.0);
         }
 
+        telemetry.addData("enroute?", enRoute);
         telemetry.addData("lw?", frontWhite);
         telemetry.addData("rw?", backWhite);
         telemetry.addData("ll", frontLight.getLightDetected());
